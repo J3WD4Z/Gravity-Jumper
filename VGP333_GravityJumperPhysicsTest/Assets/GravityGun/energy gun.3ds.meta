@@ -1,0 +1,418 @@
+fileFormatVersion: 2
+guid: 6ef8ca0c8d2ea984ea5402ef14249a51
+timeCreated: 1464579475
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Battery Shie
+    100002: BezierCircle
+    100004: BezierCircle.000
+    100006: 'Blasma Tube '
+    100008: Blasma Tube .000
+    100010: Blasma Tube .001
+    100012: Capacitor
+    100014: Capacitor Co
+    100016: Capacitor Co.000
+    100018: Capacitor Co.001
+    100020: Capacitor Co.002
+    100022: Capacitor Co.003
+    100024: Capacitor Co.004
+    100026: Capacitor.00
+    100028: Capacitor.00.000
+    100030: Capacitor.00.001
+    100032: Capacitor.00.002
+    100034: Capacitor.00.003
+    100036: Cell Case
+    100038: Cell Connect
+    100040: Cell Core
+    100042: Cell Guide R
+    100044: Cell Guide R.000
+    100046: Cell Guide R.001
+    100048: Cell Guide R.002
+    100050: Cell Holders
+    100052: Cell Poles
+    100054: Cone.000
+    100056: Cone.001
+    100058: Cylinder
+    100060: //RootNode
+    100062: Grip
+    100064: Guide Arm Co
+    100066: Guide Arm Co.000
+    100068: Guide Arm Co.001
+    100070: Guide Arm Co.002
+    100072: Guide Arm Co.003
+    100074: Guide Arm Co.004
+    100076: Guide Arm Co.005
+    100078: Guide Arm Co.006
+    100080: Guide Arm Co.007
+    100082: Guide Arm Co.008
+    100084: Guide Arm Co.009
+    100086: Guide Armsgs
+    100088: Guide Armsgs.000
+    100090: Guide Armsgs.001
+    100092: Guide Armsgs.002
+    100094: Guide Wheel
+    100096: Guide Wheel.
+    100098: Nozzle Brack
+    100100: Plane
+    100102: Plasma Tube
+    100104: 'Plasma Tube '
+    100106: Plasma Valve
+    100108: Plasma Valve.000
+    100110: Power Regula
+    100112: Power Tube.0
+    100114: Scope
+    100116: Scope Connec
+    100118: Scope Connec.000
+    100120: Scope Connec.001
+    100122: Scope Connec.002
+    100124: Scope Connec.003
+    100126: Scope Connec.004
+    100128: Scope Shield
+    100130: Scope Tube
+    100132: Scope Tube.0
+    100134: Scope Tube.0.000
+    100136: Sphere
+    100138: Trigger
+    400000: Battery Shie
+    400002: BezierCircle
+    400004: BezierCircle.000
+    400006: 'Blasma Tube '
+    400008: Blasma Tube .000
+    400010: Blasma Tube .001
+    400012: Capacitor
+    400014: Capacitor Co
+    400016: Capacitor Co.000
+    400018: Capacitor Co.001
+    400020: Capacitor Co.002
+    400022: Capacitor Co.003
+    400024: Capacitor Co.004
+    400026: Capacitor.00
+    400028: Capacitor.00.000
+    400030: Capacitor.00.001
+    400032: Capacitor.00.002
+    400034: Capacitor.00.003
+    400036: Cell Case
+    400038: Cell Connect
+    400040: Cell Core
+    400042: Cell Guide R
+    400044: Cell Guide R.000
+    400046: Cell Guide R.001
+    400048: Cell Guide R.002
+    400050: Cell Holders
+    400052: Cell Poles
+    400054: Cone.000
+    400056: Cone.001
+    400058: Cylinder
+    400060: //RootNode
+    400062: Grip
+    400064: Guide Arm Co
+    400066: Guide Arm Co.000
+    400068: Guide Arm Co.001
+    400070: Guide Arm Co.002
+    400072: Guide Arm Co.003
+    400074: Guide Arm Co.004
+    400076: Guide Arm Co.005
+    400078: Guide Arm Co.006
+    400080: Guide Arm Co.007
+    400082: Guide Arm Co.008
+    400084: Guide Arm Co.009
+    400086: Guide Armsgs
+    400088: Guide Armsgs.000
+    400090: Guide Armsgs.001
+    400092: Guide Armsgs.002
+    400094: Guide Wheel
+    400096: Guide Wheel.
+    400098: Nozzle Brack
+    400100: Plane
+    400102: Plasma Tube
+    400104: 'Plasma Tube '
+    400106: Plasma Valve
+    400108: Plasma Valve.000
+    400110: Power Regula
+    400112: Power Tube.0
+    400114: Scope
+    400116: Scope Connec
+    400118: Scope Connec.000
+    400120: Scope Connec.001
+    400122: Scope Connec.002
+    400124: Scope Connec.003
+    400126: Scope Connec.004
+    400128: Scope Shield
+    400130: Scope Tube
+    400132: Scope Tube.0
+    400134: Scope Tube.0.000
+    400136: Sphere
+    400138: Trigger
+    2300000: Battery Shie
+    2300002: BezierCircle
+    2300004: BezierCircle.000
+    2300006: 'Blasma Tube '
+    2300008: Blasma Tube .000
+    2300010: Blasma Tube .001
+    2300012: Capacitor
+    2300014: Capacitor Co
+    2300016: Capacitor Co.000
+    2300018: Capacitor Co.001
+    2300020: Capacitor Co.002
+    2300022: Capacitor Co.003
+    2300024: Capacitor Co.004
+    2300026: Capacitor.00
+    2300028: Capacitor.00.000
+    2300030: Capacitor.00.001
+    2300032: Capacitor.00.002
+    2300034: Capacitor.00.003
+    2300036: Cell Case
+    2300038: Cell Connect
+    2300040: Cell Core
+    2300042: Cell Guide R
+    2300044: Cell Guide R.000
+    2300046: Cell Guide R.001
+    2300048: Cell Guide R.002
+    2300050: Cell Holders
+    2300052: Cell Poles
+    2300054: Cone.000
+    2300056: Cone.001
+    2300058: Cylinder
+    2300060: Grip
+    2300062: Guide Arm Co
+    2300064: Guide Arm Co.000
+    2300066: Guide Arm Co.001
+    2300068: Guide Arm Co.002
+    2300070: Guide Arm Co.003
+    2300072: Guide Arm Co.004
+    2300074: Guide Arm Co.005
+    2300076: Guide Arm Co.006
+    2300078: Guide Arm Co.007
+    2300080: Guide Arm Co.008
+    2300082: Guide Arm Co.009
+    2300084: Guide Armsgs
+    2300086: Guide Armsgs.000
+    2300088: Guide Armsgs.001
+    2300090: Guide Armsgs.002
+    2300092: Guide Wheel
+    2300094: Guide Wheel.
+    2300096: Nozzle Brack
+    2300098: Plane
+    2300100: Plasma Tube
+    2300102: 'Plasma Tube '
+    2300104: Plasma Valve
+    2300106: Plasma Valve.000
+    2300108: Power Regula
+    2300110: Power Tube.0
+    2300112: Scope
+    2300114: Scope Connec
+    2300116: Scope Connec.000
+    2300118: Scope Connec.001
+    2300120: Scope Connec.002
+    2300122: Scope Connec.003
+    2300124: Scope Connec.004
+    2300126: Scope Shield
+    2300128: Scope Tube
+    2300130: Scope Tube.0
+    2300132: Scope Tube.0.000
+    2300134: Sphere
+    2300136: Trigger
+    3300000: Battery Shie
+    3300002: BezierCircle
+    3300004: BezierCircle.000
+    3300006: 'Blasma Tube '
+    3300008: Blasma Tube .000
+    3300010: Blasma Tube .001
+    3300012: Capacitor
+    3300014: Capacitor Co
+    3300016: Capacitor Co.000
+    3300018: Capacitor Co.001
+    3300020: Capacitor Co.002
+    3300022: Capacitor Co.003
+    3300024: Capacitor Co.004
+    3300026: Capacitor.00
+    3300028: Capacitor.00.000
+    3300030: Capacitor.00.001
+    3300032: Capacitor.00.002
+    3300034: Capacitor.00.003
+    3300036: Cell Case
+    3300038: Cell Connect
+    3300040: Cell Core
+    3300042: Cell Guide R
+    3300044: Cell Guide R.000
+    3300046: Cell Guide R.001
+    3300048: Cell Guide R.002
+    3300050: Cell Holders
+    3300052: Cell Poles
+    3300054: Cone.000
+    3300056: Cone.001
+    3300058: Cylinder
+    3300060: Grip
+    3300062: Guide Arm Co
+    3300064: Guide Arm Co.000
+    3300066: Guide Arm Co.001
+    3300068: Guide Arm Co.002
+    3300070: Guide Arm Co.003
+    3300072: Guide Arm Co.004
+    3300074: Guide Arm Co.005
+    3300076: Guide Arm Co.006
+    3300078: Guide Arm Co.007
+    3300080: Guide Arm Co.008
+    3300082: Guide Arm Co.009
+    3300084: Guide Armsgs
+    3300086: Guide Armsgs.000
+    3300088: Guide Armsgs.001
+    3300090: Guide Armsgs.002
+    3300092: Guide Wheel
+    3300094: Guide Wheel.
+    3300096: Nozzle Brack
+    3300098: Plane
+    3300100: Plasma Tube
+    3300102: 'Plasma Tube '
+    3300104: Plasma Valve
+    3300106: Plasma Valve.000
+    3300108: Power Regula
+    3300110: Power Tube.0
+    3300112: Scope
+    3300114: Scope Connec
+    3300116: Scope Connec.000
+    3300118: Scope Connec.001
+    3300120: Scope Connec.002
+    3300122: Scope Connec.003
+    3300124: Scope Connec.004
+    3300126: Scope Shield
+    3300128: Scope Tube
+    3300130: Scope Tube.0
+    3300132: Scope Tube.0.000
+    3300134: Sphere
+    3300136: Trigger
+    4300000: Cylinder
+    4300002: Cone.000
+    4300004: Cone.001
+    4300006: Guide Armsgs
+    4300008: Guide Arm Co
+    4300010: Cell Guide R
+    4300012: Guide Arm Co.000
+    4300014: Cell Guide R.000
+    4300016: Guide Armsgs.000
+    4300018: Guide Arm Co.001
+    4300020: Cell Guide R.001
+    4300022: BezierCircle
+    4300024: Power Tube.0
+    4300026: Power Regula
+    4300028: BezierCircle.000
+    4300030: Scope Tube.0
+    4300032: Scope Tube.0.000
+    4300034: Scope Tube
+    4300036: Plane
+    4300038: Scope Connec
+    4300040: Scope Connec.000
+    4300042: Scope Connec.001
+    4300044: Scope Connec.002
+    4300046: Scope Connec.003
+    4300048: Scope Connec.004
+    4300050: Scope Shield
+    4300052: Scope
+    4300054: Grip
+    4300056: Trigger
+    4300058: Battery Shie
+    4300060: Plasma Valve
+    4300062: Plasma Valve.000
+    4300064: Capacitor Co
+    4300066: Capacitor.00
+    4300068: Capacitor.00.000
+    4300070: Capacitor Co.000
+    4300072: Capacitor.00.001
+    4300074: Capacitor Co.001
+    4300076: Capacitor Co.002
+    4300078: Capacitor.00.002
+    4300080: Capacitor Co.003
+    4300082: Capacitor.00.003
+    4300084: Capacitor
+    4300086: Capacitor Co.004
+    4300088: Nozzle Brack
+    4300090: Sphere
+    4300092: 'Blasma Tube '
+    4300094: Blasma Tube .000
+    4300096: Blasma Tube .001
+    4300098: Plasma Tube
+    4300100: 'Plasma Tube '
+    4300102: Guide Wheel.
+    4300104: Guide Wheel
+    4300106: Guide Arm Co.002
+    4300108: Guide Arm Co.003
+    4300110: Guide Arm Co.004
+    4300112: Guide Arm Co.005
+    4300114: Guide Armsgs.001
+    4300116: Guide Arm Co.006
+    4300118: Guide Arm Co.007
+    4300120: Guide Arm Co.008
+    4300122: Guide Arm Co.009
+    4300124: Cell Guide R.002
+    4300126: Guide Armsgs.002
+    4300128: Cell Connect
+    4300130: Cell Holders
+    4300132: Cell Poles
+    4300134: Cell Core
+    4300136: Cell Case
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
