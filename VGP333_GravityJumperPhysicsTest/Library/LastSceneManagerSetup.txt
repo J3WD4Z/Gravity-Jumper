@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/Scenes/GunTest.unity
+  isLoaded: 1
+  isActive: 1
