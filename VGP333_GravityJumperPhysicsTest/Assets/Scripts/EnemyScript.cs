@@ -17,8 +17,8 @@ public class EnemyScript : MonoBehaviour {
     private Vector3 m_GreatAss;
     public float m_Proximity;
     private bool m_ProxBool;
-    [SerializeField]
-    private float m_Distance;
+    //[SerializeField]
+    public float m_Distance;
 
     // Use this for initialization
     void Start () {
