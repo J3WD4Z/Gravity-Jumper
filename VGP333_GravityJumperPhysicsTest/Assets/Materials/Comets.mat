@@ -6,12 +6,13 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: skyboxv1_earthfar
-  m_Shader: {fileID: 104, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_Name: Comets
+  m_Shader: {fileID: 10753, guid: 0000000000000000e000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHATEST_ON
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 1000
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: TransparentCutout
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -19,7 +20,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 79de0b17879ddd844aa41d21b74fc718, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -80,44 +81,9 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _FrontTex
+          name: _SpecGlossMap
         second:
-          m_Texture: {fileID: 2800000, guid: 7bce6803bffae894399045a298e8753e, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _BackTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 18d2c709823bf034da4fa6016830a411, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _LeftTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 59314751c9958b341a9349badb4625f4, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _RightTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 37d2d3743dc506844854930ccd204a94, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _UpTex
-        second:
-          m_Texture: {fileID: 2800000, guid: c93a2259b2c37bd4198295b13d3f0d48, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DownTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 9d09bbb1e9cf7fb43b593f4f841ee503, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -132,11 +98,11 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: 0.5
+        second: 0.203
       data:
         first:
-          name: _Exposure
-        second: 1
+          name: PixelSnap
+        second: 0
       data:
         first:
           name: _Parallax
@@ -168,15 +134,15 @@ Material:
       data:
         first:
           name: _Mode
-        second: 0
+        second: 1
       data:
         first:
           name: _Metallic
         second: 0
       data:
         first:
-          name: _Rotation
-        second: 0
+          name: _InvFade
+        second: 1
     m_Colors:
       data:
         first:
@@ -185,8 +151,12 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 0.9485294, g: 0.9485294, b: 0.9485294, a: 1}
       data:
         first:
-          name: _Tint
+          name: _SpecColor
+        second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+      data:
+        first:
+          name: _TintColor
         second: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
