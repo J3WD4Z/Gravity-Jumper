@@ -4,18 +4,18 @@ using System.Collections;
 
 public class PickUps : MonoBehaviour
 {
-    public Text scoreText;
     private int score;
+    private Text scoreText;
 
 	void Start ()
     {
-        UpdateScore(0);
+        scoreText = GetComponent<Text>();
 	}
 	
 	void Update ()
     {
-	
-	}
+        UpdateScore(0);
+    }
 
     public void OnTriggerEnter(Collider other)
     {

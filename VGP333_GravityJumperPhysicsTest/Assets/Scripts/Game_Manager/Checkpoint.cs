@@ -3,9 +3,6 @@ using System.Collections;
 
 public class Checkpoint : MonoBehaviour
 {
-    public bool wasTriggered = false;
-    public int index = 0;
-
     private Vector3 lastCheckpoint = Vector3.zero;
     private Vector3 startPosition = Vector3.zero;
     private int lastCheckpointIndex = -1;
@@ -18,18 +15,18 @@ public class Checkpoint : MonoBehaviour
 	
 	void Update ()
     {
-	
-	}
+        lastCheckpoint = startPosition;
+    }
 
     public void checks()
-    {
+    {      
         transform.position = lastCheckpoint;
     }
 
     public void OnTriggerEnter(Collider other)
     {
         
-    Checkpoint ckp = other.GetComponent<Checkpoint>();        
+    Checkpt ckp = other.GetComponent<Checkpt>();        
          if (ckp != null && ckp.wasTriggered == false && ckp.index > lastCheckpointIndex)
          {
              lastCheckpoint = other.transform.position;
