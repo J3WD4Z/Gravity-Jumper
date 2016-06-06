@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/PhysicsTestingScene.unity
+- path: Assets/Scenes/StatingMenu.unity
   isLoaded: 1
   isActive: 1
