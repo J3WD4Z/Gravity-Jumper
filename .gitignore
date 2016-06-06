@@ -28,3 +28,6 @@ sysinfo.txt
 *.info
 VGP333_GravityJumperPhysicsTest/Temp/UnityLockfile
 *.info
+VGP333_GravityJumperPhysicsTest/Library/
+VGP333_GravityJumperPhysicsTest/Library/metadata/
+VGP333_GravityJumperPhysicsTest/Temp/
