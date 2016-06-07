@@ -9,9 +9,12 @@ public class Overseer : MonoBehaviour {
     private LineRenderer m_LR;
     [SerializeField]
     private Vector3[] m_Poses;
+    
 
 	// Use this for initialization
 	void Start () {
+        m_Player = GameObject.FindGameObjectWithTag("Player");
+        m_Enemy = GameObject.FindGameObjectWithTag("Enemy");
         m_Vertices = 2;
         m_LR = this.GetComponent<LineRenderer>();
         m_LR.SetVertexCount(m_Vertices);

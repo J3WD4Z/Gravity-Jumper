@@ -14,10 +14,14 @@ public class PlayerScript : MonoBehaviour
 	private MyMouseLook m_MouseLook;
 	private Quaternion rot;
 	public bool onground;
+    [SerializeField]
+    private Vector3 m_Velocity;
+    public float m_GravLimit;
+    [SerializeField]
+    private Quaternion m_Rotation;
 
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
 	{
 		
 		m_MouseLook = this.GetComponent<MyMouseLook>();
@@ -50,7 +54,17 @@ public class PlayerScript : MonoBehaviour
 				cache_rb.velocity = resultant(strafe, forw);
 			}
 		}
-	}
+
+        m_Velocity = this.GetComponent<Rigidbody>().velocity;
+        m_Rotation = this.GetComponent<Transform>().rotation;
+
+        if (m_Velocity.y < m_GravLimit)
+        {
+            m_Velocity.y = m_GravLimit;
+        }
+        
+        
+    }
 
 	void FixedUpdate()
 	{
