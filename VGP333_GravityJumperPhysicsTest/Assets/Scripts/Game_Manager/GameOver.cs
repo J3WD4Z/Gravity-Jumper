@@ -17,13 +17,10 @@ public class GameOver : MonoBehaviour
 	
 	}
 
-    public void Die()
+    public void gameOver()
     {
         checkPoint.checks();
-
-        if(health.healthCoutner <= 0)
-        {
-            //Display GameOver Screen
-        } 
+        //Display GameOver Screen
+        Debug.Log("You lose Bro!");
     }
 }

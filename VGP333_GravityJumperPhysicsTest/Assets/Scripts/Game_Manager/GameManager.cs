@@ -10,17 +10,14 @@ public class GameManager : MonoBehaviour
     private HealthManager health;
     private Level_Timer timer;
 
-    private Text healthText;
-    private Text timerText;
 
 	void Start ()
     {
-        healthText = GetComponent<Text>();
-        timerText = GetComponent<Text>();   
+                 
     }
-	
-	void Update ()
+
+    void Update()
     {
-	
-	}
+      
+    }
 }

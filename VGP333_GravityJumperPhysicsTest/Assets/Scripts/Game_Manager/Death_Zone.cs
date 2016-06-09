@@ -5,13 +5,13 @@ public class Death_Zone : MonoBehaviour
 {
     private HealthManager health;
     private GameOver gameOver;
+    private Checkpoint checkPoint;
 
 	void Start ()
     {
         health = FindObjectOfType<HealthManager>();
     }
 
-   
 	void Update ()
     {
 	
@@ -19,10 +19,10 @@ public class Death_Zone : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Deathbound"))
+        if(other.CompareTag("DeathZone") )
         {
             health.loseHealth();
-            gameOver.Die();
+            checkPoint.checks();
         }
     }
 }

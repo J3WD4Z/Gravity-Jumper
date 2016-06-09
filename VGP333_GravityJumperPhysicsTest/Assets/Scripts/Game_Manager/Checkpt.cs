@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Checkpoint : MonoBehaviour
+public class Checkpt : MonoBehaviour
 {
 
     public bool wasTriggered = false;
