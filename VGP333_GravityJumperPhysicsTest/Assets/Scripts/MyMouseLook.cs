@@ -25,7 +25,7 @@ public class MyMouseLook : MonoBehaviour
 	}
 
 
-	public void LookRotation(Transform character, Transform camera)
+	public void LookRotation(ref Quaternion character, ref Quaternion camera)
 	{
 		float yRot = Input.GetAxis("Mouse X") * XSensitivity;
 		float xRot = Input.GetAxis("Mouse Y") * YSensitivity;
@@ -38,15 +38,15 @@ public class MyMouseLook : MonoBehaviour
 
 		if (smooth)
 		{
-			character.localRotation = Quaternion.Slerp(character.localRotation, m_CharacterTargetRot,
+			character = Quaternion.Slerp(character, m_CharacterTargetRot,
 				smoothTime * Time.deltaTime);
-			camera.localRotation = Quaternion.Slerp(camera.localRotation, m_CameraTargetRot,
+			camera = Quaternion.Slerp(camera, m_CameraTargetRot,
 				smoothTime * Time.deltaTime);
 		}
 		else
 		{
-			character.localRotation = m_CharacterTargetRot;
-			camera.localRotation = m_CameraTargetRot;
+			character = m_CharacterTargetRot;
+			camera = m_CameraTargetRot;
 		}
 
 		UpdateCursorLock();
@@ -117,6 +117,6 @@ public class MyMouseLook : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	
+		
 	}
 }
