@@ -21,7 +21,7 @@ public class EnemyScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        m_Proximity = 20.0f;
+
 	}
 	
 	// Update is called once per frame
