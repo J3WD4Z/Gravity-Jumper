@@ -53,7 +53,6 @@ public class PlayerScript : MonoBehaviour
 
         #region Ground Movement
         if (onground == true)
-=======
 		if (Input.GetButton("r"))
 		{
 			b_Camera.enabled = true;
@@ -68,7 +67,6 @@ public class PlayerScript : MonoBehaviour
 		RotateView();
 
 		if (onground == true)
->>>>>>> origin/master
 		{
 			float horizontal = Input.GetAxis("Horizontal");
 			float vertical = Input.GetAxis("Vertical");

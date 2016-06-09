@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
 
-    public GameObject m_Enemy;
+    //public GameObject m_Enemy;
     public GameObject m_Player;
     [SerializeField]
     //private Vector3 m_P;
@@ -21,15 +21,15 @@ public class EnemyScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        m_Proximity = 5.5f;
+        m_Proximity = 20.0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        m_TranslateX = m_Player.transform.position.x - m_Enemy.transform.position.x * 0.5f;
-        m_TranslateY = m_Player.transform.position.y - m_Enemy.transform.position.y * 0.5f;
-        m_TranslateZ = m_Player.transform.position.z - m_Enemy.transform.position.z * 0.5f;
+        m_TranslateX = m_Player.transform.position.x - this.transform.position.x * 0.5f;
+        m_TranslateY = m_Player.transform.position.y - this.transform.position.y * 0.5f;
+        m_TranslateZ = m_Player.transform.position.z - this.transform.position.z * 0.5f;
         m_Distance = Vector3.Distance(m_Player.transform.position, this.transform.position);
         //Debug.DrawLine(this.transform.position, m_Player.transform.position, Color.magenta, 10.0f);
         if(m_Distance <= m_Proximity)
