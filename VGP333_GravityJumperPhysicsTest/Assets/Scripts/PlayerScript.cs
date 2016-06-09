@@ -48,12 +48,6 @@ public class PlayerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        m_Velocity = this.GetComponent<Rigidbody>().velocity;
-        RotateView();
-
-        #region Ground Movement
-        if (onground == true)
-=======
 		if (Input.GetButton("r"))
 		{
 			b_Camera.enabled = true;
@@ -64,11 +58,12 @@ public class PlayerScript : MonoBehaviour
 			b_Camera.enabled = false;
 			m_Camera.enabled = true;
 		}
-		
-		RotateView();
+		m_Velocity = this.GetComponent<Rigidbody>().velocity;
+        RotateView();
+
+        #region Ground Movement
 
 		if (onground == true)
->>>>>>> origin/master
 		{
 			float horizontal = Input.GetAxis("Horizontal");
 			float vertical = Input.GetAxis("Vertical");
