@@ -3,36 +3,22 @@ using System.Collections;
 
 public class Checkpoint : MonoBehaviour
 {
-    private Vector3 lastCheckpoint = Vector3.zero;
-    private Vector3 startPosition = Vector3.zero;
-    private int lastCheckpointIndex = -1;
 
-    void Start ()
+    public bool wasTriggered = false;
+    public int index = 0;
+
+    // Use this for initialization
+    void Start()
     {
-        lastCheckpoint = transform.position;
-        startPosition = transform.position;
-    }
-	
-	void Update ()
-    {
-        lastCheckpoint = startPosition;
+
     }
 
-    public void checks()
-    {      
-        transform.position = lastCheckpoint;
-    }
-
-    public void OnTriggerEnter(Collider other)
+    // Update is called once per frame
+    void Update()
     {
-        
-    Checkpt ckp = other.GetComponent<Checkpt>();        
-         if (ckp != null && ckp.wasTriggered == false && ckp.index > lastCheckpointIndex)
-         {
-             lastCheckpoint = other.transform.position;
-             ckp.wasTriggered = true;
-             lastCheckpointIndex = ckp.index;
-         }
-         
+        if(CompareTag( "Player" ) )
+        {
+            Debug.Log("Checkpoint Reached.");
+        }
     }
 }

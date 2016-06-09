@@ -2,14 +2,9 @@
 using System.Collections;
 
 public class Death_Zone : MonoBehaviour
-{
-    private HealthManager health;
-    private GameOver gameOver;
-    private Checkpoint checkPoint;
-
+{    
 	void Start ()
     {
-        health = FindObjectOfType<HealthManager>();
     }
 
 	void Update ()
@@ -19,10 +14,14 @@ public class Death_Zone : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("DeathZone") )
+        if(other.CompareTag( "Player" ) )
         {
-            health.loseHealth();
-            checkPoint.checks();
+            HealthManager _health = other.GetComponent<HealthManager>();
+            _health.takeDmg();  
+            GameManager.Instance.RespawnPlayer();
+
+            Debug.Log("Health Taken.");
+                    
         }
     }
 }

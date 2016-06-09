@@ -4,11 +4,9 @@ using System.Collections;
 
 public class Level_Timer : MonoBehaviour
 {
-    private GameOver gameOver;
+    public Text timerText;
 
     public float startingTime;
-
-    private Text timerText;
 
     void Start ()
     {
@@ -23,7 +21,7 @@ public class Level_Timer : MonoBehaviour
         if (startingTime <= 0)
         {
             startingTime = 0;
-            gameOver.gameOver();
+            GameManager.Instance.mGameOver.gameOver();
         }
     }
 }
