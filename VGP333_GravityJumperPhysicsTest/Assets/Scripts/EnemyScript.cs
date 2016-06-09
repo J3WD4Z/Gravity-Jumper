@@ -31,7 +31,7 @@ public class EnemyScript : MonoBehaviour {
         m_TranslateY = m_Player.transform.position.y - m_Enemy.transform.position.y * 0.5f;
         m_TranslateZ = m_Player.transform.position.z - m_Enemy.transform.position.z * 0.5f;
         m_Distance = Vector3.Distance(m_Player.transform.position, this.transform.position);
-        Debug.DrawLine(this.transform.position, m_Player.transform.position, Color.magenta, 10.0f);
+        //Debug.DrawLine(this.transform.position, m_Player.transform.position, Color.magenta, 10.0f);
         if(m_Distance <= m_Proximity)
         {
             m_GreatAss = new Vector3(m_TranslateX, m_TranslateY, m_TranslateZ);
