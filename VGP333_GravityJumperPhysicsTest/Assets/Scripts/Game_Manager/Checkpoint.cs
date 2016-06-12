@@ -16,6 +16,9 @@ public class Checkpoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if(CompareTag( "Player" ) )
+        {
+            Debug.Log("Checkpoint Reached.");
+        }
     }
 }

@@ -5,22 +5,30 @@ using System.Collections;
 public class PickUps : MonoBehaviour
 {
     private int score;
+    private Text scoreText;
 
-	public GameObject Coin;
-	public Text scoreText;
+	void Start ()
+    {
+        scoreText = GetComponent<Text>();
+	}
 	
 	void Update ()
     {
-		scoreText.text = "Score: " + score;
+        UpdateScore(0);
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag( "PickUp" ) )
         {
-			score++;
             other.gameObject.SetActive(false);
-			//UpdateScore(score + 1);
+            UpdateScore(score + 1);
         }
+    }
+
+    public void UpdateScore(int newScore)
+    {
+        score = newScore;
+        scoreText.text = "Score: " + score.ToString();
     }
 }

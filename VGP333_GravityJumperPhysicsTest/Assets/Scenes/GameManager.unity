@@ -99,7 +99,7 @@ GameObject:
   - 114: {fileID: 100649067}
   m_Layer: 0
   m_Name: DeathZone
-  m_TagString: Untagged
+  m_TagString: DeathZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ Transform:
   m_LocalScale: {x: 20, y: 0.5, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!114 &100649067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +188,6 @@ GameObject:
   - 114: {fileID: 352335661}
   - 114: {fileID: 352335662}
   - 114: {fileID: 352335663}
-  - 114: {fileID: 352335664}
-  - 114: {fileID: 352335665}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -280,7 +278,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!114 &352335661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,10 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ddb111c709b4a4ca1cabb111549c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: {fileID: 2011110805}
   healthText: {fileID: 582441393}
-  initHealth: 2
-  healthCoutner: 0
+  initHealth: 5
 --- !u!114 &352335662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,32 +314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1da097878679d34ba43859af488c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &352335664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 352335654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b250e8be90543744da557ff2c7e43e9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 2086808058}
-  startingTime: 50
---- !u!114 &352335665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 352335654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724be8a69b1f03b47b27262a65b8435c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Coin: {fileID: 2075902159}
-  scoreText: {fileID: 719244780}
 --- !u!1 &582441391
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -513,6 +483,7 @@ GameObject:
   - 224: {fileID: 719244779}
   - 222: {fileID: 719244781}
   - 114: {fileID: 719244780}
+  - 114: {fileID: 719244782}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -532,10 +503,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1897057307}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0.01454022, y: 0.45411623}
-  m_AnchorMax: {x: 0.23315327, y: 0.6724647}
-  m_AnchoredPosition: {x: 0.34999847, y: 3}
-  m_SizeDelta: {x: 0.25, y: -6}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 489, y: 258.27}
+  m_SizeDelta: {x: 288.38, y: 98.276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &719244780
 MonoBehaviour:
@@ -558,10 +529,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 15
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 0
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 2
     m_AlignByGeometry: 0
@@ -576,6 +547,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 719244778}
+--- !u!114 &719244782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 719244778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724be8a69b1f03b47b27262a65b8435c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1134791677
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,10 +725,8 @@ MonoBehaviour:
   mCheckPointSystem: {fileID: 352335663}
   mDeathZone: {fileID: 100649067}
   mGameOver: {fileID: 352335662}
-  mHealthManager: {fileID: 352335661}
-  mTimer: {fileID: 352335664}
-  mLifePlus: {fileID: 2011110810}
-  mPickUps: {fileID: 352335665}
+  mHealth: {fileID: 352335661}
+  mTimer: {fileID: 2086808060}
 --- !u!224 &1706109590
 RectTransform:
   m_ObjectHideFlags: 0
@@ -758,7 +738,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 654.0538, y: 431.26746}
@@ -839,7 +819,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!114 &1868002851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,7 +921,7 @@ RectTransform:
   - {fileID: 582441392}
   - {fileID: 719244779}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1019,7 +999,6 @@ GameObject:
   - 33: {fileID: 2011110808}
   - 65: {fileID: 2011110807}
   - 23: {fileID: 2011110806}
-  - 114: {fileID: 2011110810}
   m_Layer: 0
   m_Name: Life+1
   m_TagString: Untagged
@@ -1060,7 +1039,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2011110805}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
@@ -1084,107 +1063,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
---- !u!114 &2011110810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2011110805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d2e62de35566774d98e11abe0061a22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wasTriggered: 0
---- !u!1 &2075902159
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2075902163}
-  - 33: {fileID: 2075902162}
-  - 136: {fileID: 2075902161}
-  - 23: {fileID: 2075902160}
-  - 114: {fileID: 2075902164}
-  m_Layer: 0
-  m_Name: Coin
-  m_TagString: PickUp
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &2075902160
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2075902159}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!136 &2075902161
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2075902159}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &2075902162
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2075902159}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2075902163
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2075902159}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 2.2399902, y: 0.5, z: -3}
-  m_LocalScale: {x: 0.5, y: 0.030000003, z: 0.5}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
---- !u!114 &2075902164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2075902159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6a6788a2922e2648b78d0addb8fd738, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spin: {x: 0, y: 0, z: 90}
 --- !u!1 &2086808056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1073,7 @@ GameObject:
   - 224: {fileID: 2086808057}
   - 222: {fileID: 2086808059}
   - 114: {fileID: 2086808058}
+  - 114: {fileID: 2086808060}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -1214,10 +1093,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1897057307}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.01454022, y: 0.6724647}
-  m_AnchorMax: {x: 0.23315327, y: 0.8284766}
-  m_AnchoredPosition: {x: -0.13999939, y: -0.14699936}
-  m_SizeDelta: {x: 0, y: -1.5499878}
+  m_AnchorMin: {x: 0.39110458, y: 0.8284766}
+  m_AnchorMax: {x: 0.60974216, y: 0.98186916}
+  m_AnchoredPosition: {x: -0.5, y: -0.5}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086808058
 MonoBehaviour:
@@ -1231,7 +1110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1240,7 +1119,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 15
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -1258,3 +1137,16 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2086808056}
+--- !u!114 &2086808060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2086808056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91de53c50ea3f894384e68ffca2fbb9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 2086808058}
+  startingTime: 500

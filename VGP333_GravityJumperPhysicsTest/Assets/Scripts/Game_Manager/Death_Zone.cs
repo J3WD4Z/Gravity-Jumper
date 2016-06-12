@@ -5,8 +5,7 @@ public class Death_Zone : MonoBehaviour
 {    
 	void Start ()
     {
-    
-	}
+    }
 
 	void Update ()
     {
@@ -15,12 +14,15 @@ public class Death_Zone : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-		if (other.CompareTag ("Player")) 
-		{
-			GameManager.Instance.mHealthManager.takeDmg ();
-			GameManager.Instance.mCheckPointSystem.RespawnPlayer ();
-			Debug.Log ("Life Taken.");
-		}
+        if(other.CompareTag( "Player" ) )
+        {
+            HealthManager _health = other.GetComponent<HealthManager>();
+            _health.takeDmg();  
+            GameManager.Instance.RespawnPlayer();
+
+            Debug.Log("Health Taken.");
+                    
+        }
     }
 }
 
