@@ -26,6 +26,12 @@ public class CheckpointSystem : MonoBehaviour
 
         Rigidbody rb = t.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
+
+		if (GameManager.Instance.mHealthManager.healthCoutner == 0) 
+		{
+			t.position = Vector3.zero;
+		}
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -33,9 +39,15 @@ public class CheckpointSystem : MonoBehaviour
         Checkpoint ckp = other.GetComponent<Checkpoint>();        
          if (ckp != null && ckp.wasTriggered == false && ckp.index > lastCheckpointIndex)
          {
-             lastCheckpoint = other.transform.position;
-             ckp.wasTriggered = true;
-             lastCheckpointIndex = ckp.index;
+            lastCheckpoint = other.transform.position;
+            ckp.wasTriggered = true;
+            lastCheckpointIndex = ckp.index;
+		  	Debug.Log("Checkpoint Reached.");
          }
     }
+
+	public void RespawnPlayer()
+	{
+		ResetObject(GameManager.Instance.mPlayer.transform);
+	}
 }

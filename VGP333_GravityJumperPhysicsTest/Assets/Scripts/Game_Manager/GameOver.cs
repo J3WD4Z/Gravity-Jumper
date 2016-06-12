@@ -17,7 +17,7 @@ public class GameOver : MonoBehaviour
 
     public void gameOver()
     {
-        GameManager.Instance.RespawnPlayer();
+		GameManager.Instance.mCheckPointSystem.RespawnPlayer ();
         //Display GameOver Screen
         Debug.Log("You lose");
     }

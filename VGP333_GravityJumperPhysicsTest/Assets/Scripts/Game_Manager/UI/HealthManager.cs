@@ -4,11 +4,11 @@ using System.Collections;
 
 public class HealthManager : MonoBehaviour
 {
-    public Text healthText;
-
+	public GameObject life;
+	public Text healthText;
     public int initHealth;
 
-    private int healthCoutner;
+    public int healthCoutner;
 
     void Start ()
     {
@@ -20,7 +20,7 @@ public class HealthManager : MonoBehaviour
         healthText.text = "Life: " + healthCoutner;
         if (healthCoutner <= 0)
         {
-            GameManager.Instance.mGameOver.gameOver();
+			GameManager.Instance.mGameOver.gameOver();			
         }
     }
 
@@ -28,4 +28,16 @@ public class HealthManager : MonoBehaviour
     {
        healthCoutner--;     
     }
+
+	public void OnTriggerEnter(Collider other)
+	{
+		LifePlus lPlus = other.GetComponent<LifePlus>();
+		if (lPlus != null && lPlus.wasTriggered == false) 
+		{
+			healthCoutner++;
+			lPlus.wasTriggered = true;
+			other.gameObject.SetActive (false);
+			Debug.Log( "Life +1." );
+		}
+	}
 }
