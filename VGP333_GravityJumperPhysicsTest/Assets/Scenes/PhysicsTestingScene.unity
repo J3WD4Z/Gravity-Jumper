@@ -830,6 +830,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1 &1328268934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1328268935}
+  m_Layer: 0
+  m_Name: DeathZone_Bottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1328268935
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1328268934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -6.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
 --- !u!1 &1710775789 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 197724, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
@@ -1001,7 +1028,6 @@ GameObject:
   - 4: {fileID: 2057565210}
   - 114: {fileID: 2057565213}
   - 120: {fileID: 2057565212}
-  - 114: {fileID: 2057565211}
   m_Layer: 0
   m_Name: Overseer
   m_TagString: Untagged
@@ -1021,22 +1047,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!114 &2057565211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2057565209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c208dfb78f5382489ad4955decb5173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
-  m_Enemy: {fileID: 0}
-  m_Vertices: 0
-  m_LR: {fileID: 0}
-  m_Poses: []
 --- !u!120 &2057565212
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1084,14 +1094,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2057565209}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c208dfb78f5382489ad4955decb5173, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e91846c44fdb624d8a342e2b446f095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
-  m_Enemy: {fileID: 0}
-  m_Vertices: 0
-  m_LR: {fileID: 0}
-  m_Poses: []
+  mPlayer: {fileID: 0}
+  mCheckPointSystem: {fileID: 0}
+  mDeathZone: {fileID: 0}
+  mGameOver: {fileID: 0}
+  mHealth: {fileID: 0}
+  mTimer: {fileID: 0}
 --- !u!1 &2121912584
 GameObject:
   m_ObjectHideFlags: 0
