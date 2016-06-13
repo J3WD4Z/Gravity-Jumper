@@ -17,10 +17,19 @@ public class PlayerScript : MonoBehaviour
 	private Quaternion rot;
 	public bool onground;
     private Vector3 m_PlayerBottom;
+    public RaycastHit hit; 
+
+    //Player Speeds
     [SerializeField]
     private Vector3 m_Velocity;
     [SerializeField]
     private Quaternion m_Rotation;
+
+    public Vector3 display;
+    [SerializeField]
+    private Vector3 forw;
+    [SerializeField]
+    private Vector3 strafe;
 
     //Jetpack Values
     public float m_Fuel;
@@ -48,16 +57,17 @@ public class PlayerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+        display = cache_tf.up * -1;
         m_Velocity = this.GetComponent<Rigidbody>().velocity;
         RotateView();
 
         m_PlayerBottom = this.transform.position;
-        m_PlayerBottom.y = m_PlayerBottom.y - 1.0f;
-
-        //Debug.DrawLine(this.transform.position, m , Color.magenta, 10.0f);
-        if (Physics.Raycast(m_PlayerBottom, cache_tf.up * -1, 1.0f))
+        m_PlayerBottom.y = m_PlayerBottom.y - 0.6f;
+        
+        //Debug.DrawLine(m_PlayerBottom, m_PlayerBottom - new Vector3(0.0f, 3.0f, 0.0f) , Color.magenta, 2.0f);
+        if (Physics.Raycast(m_PlayerBottom, Vector3.down, 1.0f))//if (Physics.SphereCast(m_PlayerBottom, 0.5f, , out hit))//       new Vector3(0.0f, -1.0f, 0.0f)
         {
-            print("There is something below the object!");
+            //print("There is something below the object!");
             onground = true;
         }
         else
@@ -83,24 +93,51 @@ public class PlayerScript : MonoBehaviour
 
 		if (onground == true)
 		{
-			float horizontal = Input.GetAxis("Horizontal");
-			float vertical = Input.GetAxis("Vertical");
+            //float horizontal = Input.GetAxis("Horizontal");
+            //float vertical = Input.GetAxis("Vertical");
 
-			if (horizontal == 0)
-			{
-				cache_rb.velocity = forspeed * vertical * cache_tf.forward;
-			}
-			else if (vertical == 0)
-			{
-				cache_rb.velocity = cache_tf.right * horizontal * strafespeed;
-			}
-			else
-			{
-				Vector3 forw = forspeed * vertical * cache_tf.forward;
-				Vector3 strafe = cache_tf.right * strafespeed * horizontal;
-				cache_rb.velocity = resultant(strafe, forw);
-			}
-		}
+            //This block of code here is the problem zone
+            /////////////////////////////////////////////////////////////////////
+            //if (horizontal == 0)
+            //{
+            //	cache_rb.velocity = forspeed * vertical * cache_tf.forward;
+            //}
+            //else if (vertical == 0)
+            //{
+            //	cache_rb.velocity = cache_tf.right * horizontal * strafespeed;
+            //}
+            //else
+            //{
+            //	forw = forspeed * vertical * cache_tf.forward;
+            //	strafe = cache_tf.right * strafespeed * horizontal;
+            //	cache_rb.velocity = resultant(strafe, forw);
+            //}
+            ////////////////////////////////////////////////////////////////////////
+            if (Input.GetKey(KeyCode.W))
+            {
+                cache_tf.Translate(Vector3.forward * Time.deltaTime * forspeed);
+                //cache_rb.AddForce(cache_tf.forward * m_JetForce);
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                cache_tf.Translate(Vector3.left * Time.deltaTime * forspeed);
+                //cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                cache_tf.Translate(Vector3.back * Time.deltaTime * forspeed);
+                //cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                cache_tf.Translate(Vector3.right * Time.deltaTime * forspeed);
+                //cache_rb.AddForce(cache_tf.right * m_JetForce);
+            }
+
+        }
         #endregion
 
         #region Velocity Damping
