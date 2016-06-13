@@ -18,24 +18,23 @@ public class PlayerScript : MonoBehaviour
 	public bool onground;
     [SerializeField]
     private Vector3 m_Velocity;
-    public Vector3 m_GravLimit;
     [SerializeField]
     private Quaternion m_Rotation;
-    [SerializeField]
-    private int m_Ammo;
-    [SerializeField]
-    private float m_Fuel;
+
+    //Jetpack Values
+    public float m_Fuel;
     [SerializeField]
     private bool m_Jetpack;
     private Vector3 m_JetForce;
-    
-        
-	
+
+    //Damping Values
+    public float m_PositiveLimit;
+    public float m_NegativeLimit;
+    public Vector3 m_GravLimit;
 
     // Use this for initialization
     void Start ()
 	{
-        m_Fuel = 500.0f;
 		m_MouseLook = this.GetComponent<MyMouseLook>();
 		m_Camera.enabled = true;
 		cache_rb = this.GetComponent<Rigidbody>();
@@ -95,24 +94,24 @@ public class PlayerScript : MonoBehaviour
             cache_rb.AddForce(m_GravLimit * -1);
         }
 
-        if(m_Velocity.x < 0)
+        if(m_Velocity.x < m_NegativeLimit)
         {
-            cache_rb.AddForce(0.05f, 0.0f, 0.0f);
+            cache_rb.AddForce(1.5f, 0.0f, 0.0f);
         }
 
-        if(m_Velocity.x > 0)
+        if(m_Velocity.x > m_PositiveLimit)
         {
-            cache_rb.AddForce(-0.05f, 0.0f, 0.0f);
+            cache_rb.AddForce(-1.5f, 0.0f, 0.0f);
         }
 
-        if (m_Velocity.z < 0)
+        if (m_Velocity.z < m_NegativeLimit)
         {
-            cache_rb.AddForce(0.0f, 0.0f, 0.05f);
+            cache_rb.AddForce(0.0f, 0.0f, 1.5f);
         }
 
-        if (m_Velocity.z > 0)
+        if (m_Velocity.z > m_PositiveLimit)
         {
-            cache_rb.AddForce(0.0f, 0.0f, -0.05f);
+            cache_rb.AddForce(0.0f, 0.0f, -1.5f);
         }
 
         #endregion
