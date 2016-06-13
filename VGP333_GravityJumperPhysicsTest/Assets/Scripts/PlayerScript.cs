@@ -18,7 +18,7 @@ public class PlayerScript : MonoBehaviour
 	public bool onground;
     [SerializeField]
     private Vector3 m_Velocity;
-    public float m_GravLimit;
+    public Vector3 m_GravLimit;
     [SerializeField]
     private Quaternion m_Rotation;
     [SerializeField]
@@ -42,7 +42,7 @@ public class PlayerScript : MonoBehaviour
 		cache_tf = this.GetComponent<Transform>();
 		m_MouseLook.Init(cache_tf, m_Camera.transform);
         m_Jetpack = false;
-        m_JetForce = new Vector3(0.0f, 10.0f, 0.0f);
+        m_JetForce = new Vector3(0.0f, 7.5f, 0.0f);
 	}
 	
 	// Update is called once per frame
@@ -87,15 +87,39 @@ public class PlayerScript : MonoBehaviour
 			}
 		}
         #endregion
-        
-        if (m_Velocity.y < m_GravLimit)//v: Limit the Downward Velocity that Gravity can impose. Make things easier for the player.
+
+        #region Velocity Damping
+
+        if (m_Velocity.y < m_GravLimit.y)//v: Limit the Downward Velocity that Gravity can impose. Make things easier for the player.
         {
-            m_Velocity.y = m_GravLimit;
+            cache_rb.AddForce(m_GravLimit * -1);
         }
+
+        if(m_Velocity.x < 0)
+        {
+            cache_rb.AddForce(0.05f, 0.0f, 0.0f);
+        }
+
+        if(m_Velocity.x > 0)
+        {
+            cache_rb.AddForce(-0.05f, 0.0f, 0.0f);
+        }
+
+        if (m_Velocity.z < 0)
+        {
+            cache_rb.AddForce(0.0f, 0.0f, 0.05f);
+        }
+
+        if (m_Velocity.z > 0)
+        {
+            cache_rb.AddForce(0.0f, 0.0f, -0.05f);
+        }
+
+        #endregion
 
         #region Jetpack Code
 
-        if(m_Fuel <= 0.0f)
+        if (m_Fuel <= 0.0f)
         {
             m_Jetpack = false;
         }
@@ -103,6 +127,7 @@ public class PlayerScript : MonoBehaviour
         if(Input.GetButton("Fire2") && m_Fuel > 0.0f)
         {
             cache_rb.AddForce(m_JetForce);
+
             m_Fuel = m_Fuel - 0.5f;
             m_Jetpack = true;
         }
