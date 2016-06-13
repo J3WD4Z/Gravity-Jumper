@@ -6,7 +6,7 @@ public class HazardAttributes : MonoBehaviour {
     public float m_Lifetime;
 
     //Hazard's Own Damping
-    public Vector3 m_HazardFallDamp;
+    public Vector3 m_HazardUpForce; // Force to counter Gravity
 
     [SerializeField]
     private Rigidbody m_Rigidbody;
@@ -25,7 +25,11 @@ public class HazardAttributes : MonoBehaviour {
         {
             DestroyImmediate(this.gameObject);
         }
-        m_Lifetime -= Time.deltaTime;
-        m_Rigidbody.AddForce(m_HazardFallDamp);
+        else
+        {
+            m_Lifetime -= Time.deltaTime;
+            m_Rigidbody.AddForce(m_HazardUpForce);
+        }
+        
 	}
 }

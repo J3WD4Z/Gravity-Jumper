@@ -21,7 +21,7 @@ public class EnemyScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        m_Player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
