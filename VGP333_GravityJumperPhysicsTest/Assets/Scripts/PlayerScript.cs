@@ -51,7 +51,7 @@ public class PlayerScript : MonoBehaviour
         RotateView();
 
         #region Ground Movement
-        if (onground == true)
+        //if (onground == true)
 		if (Input.GetButton("r"))
 		{
 			b_Camera.enabled = true;
