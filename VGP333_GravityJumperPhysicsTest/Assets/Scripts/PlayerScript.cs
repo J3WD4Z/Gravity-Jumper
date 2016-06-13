@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour
 	private MyMouseLook m_MouseLook;
 	private Quaternion rot;
 	public bool onground;
+    private Vector3 m_PlayerBottom;
     [SerializeField]
     private Vector3 m_Velocity;
     [SerializeField]
@@ -50,9 +51,24 @@ public class PlayerScript : MonoBehaviour
         m_Velocity = this.GetComponent<Rigidbody>().velocity;
         RotateView();
 
+        m_PlayerBottom = this.transform.position;
+        m_PlayerBottom.y = m_PlayerBottom.y - 1.0f;
+
+        //Debug.DrawLine(this.transform.position, m , Color.magenta, 10.0f);
+        if (Physics.Raycast(m_PlayerBottom, cache_tf.up * -1, 1.0f))
+        {
+            print("There is something below the object!");
+            onground = true;
+        }
+        else
+        {
+            onground = false;
+        }
+            
+
         #region Ground Movement
         //if (onground == true)
-		if (Input.GetButton("r"))
+        if (Input.GetButton("r"))
 		{
 			b_Camera.enabled = true;
 			m_Camera.enabled = false;
