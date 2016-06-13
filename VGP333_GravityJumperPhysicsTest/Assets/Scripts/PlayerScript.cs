@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour
     public float m_Fuel;
     [SerializeField]
     private bool m_Jetpack;
-    private Vector3 m_JetForce;
+    public float m_JetForce;
 
     //Damping Values
     public float m_PositiveLimit;
@@ -41,7 +41,7 @@ public class PlayerScript : MonoBehaviour
 		cache_tf = this.GetComponent<Transform>();
 		m_MouseLook.Init(cache_tf, m_Camera.transform);
         m_Jetpack = false;
-        m_JetForce = new Vector3(0.0f, 7.5f, 0.0f);
+        //m_JetForce = new Vector3(0.0f, 7.5f, 0.0f);
 	}
 	
 	// Update is called once per frame
@@ -125,7 +125,7 @@ public class PlayerScript : MonoBehaviour
 
         if(Input.GetButton("Fire2") && m_Fuel > 0.0f)
         {
-            cache_rb.AddForce(m_JetForce);
+            //cache_rb.AddForce(m_JetForce);
 
             m_Fuel = m_Fuel - 0.5f;
             m_Jetpack = true;
@@ -141,22 +141,26 @@ public class PlayerScript : MonoBehaviour
 
             if(Input.GetKey(KeyCode.W))
             {
-                cache_tf.Translate(Vector3.forward * Time.deltaTime);
+                //cache_tf.Translate(Vector3.forward * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.forward * m_JetForce);
             }
 
             if (Input.GetKey(KeyCode.A))
             {
-                cache_tf.Translate(Vector3.left * Time.deltaTime);
+                //cache_tf.Translate(Vector3.left * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
             }
 
             if (Input.GetKey(KeyCode.S))
             {
-                cache_tf.Translate(Vector3.back * Time.deltaTime);
+                //cache_tf.Translate(Vector3.back * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                cache_tf.Translate(Vector3.right * Time.deltaTime);
+                //cache_tf.Translate(Vector3.right * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.right * m_JetForce);
             }
         }
 
