@@ -25,5 +25,6 @@ public class GameManager : MonoBehaviour
     public Timer mTimer;
 	public LifePlus mLifePlus;
 	public PickUps mPickUps;
+    public TextManager mTextManager;
 
 }
