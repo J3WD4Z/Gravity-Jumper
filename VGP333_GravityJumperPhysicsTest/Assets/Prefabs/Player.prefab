@@ -72,7 +72,7 @@ GameObject:
   - 65: {fileID: 6553936}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,6 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 500
   player: {fileID: 197724}
+  m_Ammo: 0
 --- !u!114 &11484472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,8 +348,13 @@ MonoBehaviour:
   strafespeed: 4.5
   onground: 0
   m_Velocity: {x: 0, y: 0, z: 0}
-  m_GravLimit: 0
   m_Rotation: {x: 0, y: 0, z: 0, w: 0}
+  m_Fuel: 0
+  m_Jetpack: 0
+  m_JetForce: 0
+  m_PositiveLimit: 0
+  m_NegativeLimit: 0
+  m_GravLimit: {x: 0, y: 0, z: 0}
 --- !u!124 &12476364
 Behaviour:
   m_ObjectHideFlags: 1

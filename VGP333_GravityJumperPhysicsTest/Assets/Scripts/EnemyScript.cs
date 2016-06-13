@@ -14,14 +14,14 @@ public class EnemyScript : MonoBehaviour {
     [SerializeField]
     private float m_TranslateZ;
     [SerializeField]
-    private Vector3 m_GreatAss;
+    private Vector3 m_EMoveSpeed;
     public float m_Proximity;
     //[SerializeField]
     public float m_Distance;
 
     // Use this for initialization
     void Start () {
-
+        m_Player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -34,12 +34,12 @@ public class EnemyScript : MonoBehaviour {
         //Debug.DrawLine(this.transform.position, m_Player.transform.position, Color.magenta, 10.0f);
         if(m_Distance <= m_Proximity)
         {
-            m_GreatAss = new Vector3(m_TranslateX, m_TranslateY, m_TranslateZ);
+            m_EMoveSpeed = new Vector3(m_TranslateX, m_TranslateY, m_TranslateZ);
 
             //transform.Translate(m_Player.transform.position.x - m_Enemy.transform.position.x * 0.1f,  m_Player.transform.position.y - m_Enemy.transform.position.y * 0.1f 
             //    , m_Player.transform.position.z - m_Enemy.transform.position.z * 0.1f );
             //transform.Translate(m_TranslateX, m_TranslateY, m_TranslateZ);
-            this.transform.position = Vector3.SmoothDamp(this.transform.position, m_GreatAss, ref m_GreatAss, 0.25f);
+            this.transform.position = Vector3.SmoothDamp(this.transform.position, m_EMoveSpeed, ref m_EMoveSpeed, 0.25f);
         }
 
         

@@ -12,7 +12,7 @@ public class HazardSpawnScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        m_Hazard = GameObject.FindGameObjectWithTag("Hazard");
+        //m_Hazard = GameObject.FindGameObjectWithTag("Hazard");
         InvokeRepeating("InstantiateHazard", m_SpawnTime, m_SpawnRate);
     }
 	
