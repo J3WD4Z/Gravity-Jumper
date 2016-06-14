@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3332120}
   - 65: {fileID: 6564906}
   - 23: {fileID: 2346902}
-  - 114: {fileID: 11449494}
+  - 114: {fileID: 11436792}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -67,9 +67,9 @@ GameObject:
   - 33: {fileID: 3395016}
   - 136: {fileID: 13674426}
   - 54: {fileID: 5405486}
-  - 114: {fileID: 11484472}
-  - 114: {fileID: 11402660}
   - 65: {fileID: 6553936}
+  - 114: {fileID: 11499344}
+  - 114: {fileID: 11439250}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -206,7 +206,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9786cf90ab1f2b14891d929e560a76a4, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -296,7 +296,21 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169230}
   m_Enabled: 1
---- !u!114 &11402660
+--- !u!114 &11436792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8237ff606f42e0c40af397ff5d1f3c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 750
+  player: {fileID: 197724}
+  m_Ammo: 1000
+--- !u!114 &11439250
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -304,7 +318,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 197724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbf8a5dbe551205499a0cc3ed8b81ef9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3294f2ca298b163428eeb9a7dce26164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   XSensitivity: 2
@@ -315,21 +329,7 @@ MonoBehaviour:
   smooth: 0
   smoothTime: 5
   lockCursor: 1
---- !u!114 &11449494
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d4612434fa7b54409d310fb6373cdd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 500
-  player: {fileID: 197724}
-  m_Ammo: 0
---- !u!114 &11484472
+--- !u!114 &11499344
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 197724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d34304bc6742e340b5a3de346cd405c, type: 3}
+  m_Script: {fileID: 11500000, guid: 50a5228d6809f694db9aee3e09c0e82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotating: 0
@@ -346,15 +346,19 @@ MonoBehaviour:
   b_Camera: {fileID: 2042024}
   forspeed: 4
   strafespeed: 4.5
-  onground: 0
+  speedup: 5
+  hasnotshot: 0
   m_Velocity: {x: 0, y: 0, z: 0}
   m_Rotation: {x: 0, y: 0, z: 0, w: 0}
-  m_Fuel: 0
+  display: {x: 0, y: 0, z: 0}
+  forw: {x: 1.13, y: 1.95, z: 1.15}
+  strafe: {x: 1.99, y: 1.18, z: 1.53}
+  m_Fuel: 10000
   m_Jetpack: 0
-  m_JetForce: 0
-  m_PositiveLimit: 0
-  m_NegativeLimit: 0
-  m_GravLimit: {x: 0, y: 0, z: 0}
+  m_JetForce: 2
+  m_PositiveLimit: 15
+  m_NegativeLimit: -15
+  m_GravLimit: {x: 0, y: -10, z: 0}
 --- !u!124 &12476364
 Behaviour:
   m_ObjectHideFlags: 1
