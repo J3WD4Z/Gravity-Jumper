@@ -74,7 +74,7 @@ public class PlayerScript : MonoBehaviour
 			}
 			else if (vertical == 0)
 			{
-				cache_rb.velocity = cache_tf.right * horizontal * strafespeed;
+				cache_rb.velocity = cache_tf.right * horizontal * strafespeed; // Damping or the max velocity method.
 			}
 			else
 			{
