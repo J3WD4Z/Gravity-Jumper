@@ -10,6 +10,7 @@ public class GroundScript : MonoBehaviour
 	//public float force;
 	//public bool pull;
 	//private Transform cache_tf;
+
 	private GameObject player;
 
 	// Use this for initialization
