@@ -189,6 +189,10 @@ Prefab:
       propertyPath: m_Ammo
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11484472, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
+      propertyPath: m_Fuel
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
   m_IsPrefabParent: 0

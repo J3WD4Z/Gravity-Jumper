@@ -19,6 +19,6 @@ public class ButtonFunc : MonoBehaviour
 
 	public void NewGame()
 	{
-		SceneManager.LoadScene("Level01");
+		SceneManager.LoadScene("GunTest");
 	}
 }
