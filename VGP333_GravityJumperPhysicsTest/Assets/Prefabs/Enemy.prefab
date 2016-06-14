@@ -84,7 +84,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 185062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 540b5b7242f0824418639cc0a8f03527, type: 3}
+  m_Script: {fileID: 11500000, guid: aae385f003678be4abf9351c1e639628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Player: {fileID: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_TranslateY: 0
   m_TranslateZ: 0
   m_EMoveSpeed: {x: 0, y: 0, z: 0}
-  m_Proximity: 0
+  m_Proximity: 20
   m_Distance: 0
 --- !u!1001 &100100000
 Prefab:
