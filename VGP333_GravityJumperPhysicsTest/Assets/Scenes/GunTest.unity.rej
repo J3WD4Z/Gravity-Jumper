@@ -1,0 +1,7 @@
+diff a/VGP333_GravityJumperPhysicsTest/Assets/Scenes/GunTest.unity b/VGP333_GravityJumperPhysicsTest/Assets/Scenes/GunTest.unity	(rejected hunks)
+@@ -593,3 +593,5 @@
+ GameObject:
+   m_PrefabParentObject: {fileID: 197724, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
+   m_PrefabInternal: {fileID: 235911600}
++=======
++>>>>>>> d48886c32b72986090801991afea98dc7cd8b8b2
