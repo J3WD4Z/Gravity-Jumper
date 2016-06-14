@@ -27,7 +27,7 @@ public class GroundScript : MonoBehaviour
 				Debug.DrawRay(player.transform.position, p_force, Color.red);
 			}
 		
-			if (player.GetComponent<PlayerScript>().onground == true)
+			if (player.GetComponent<PlayerScript>().hasshot == true)
 			{
 				pull = false;
 			}

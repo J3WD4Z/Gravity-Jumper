@@ -12,12 +12,16 @@ public class PlayerScript : MonoBehaviour
 	private Transform cache_tf;
 	public float forspeed;
 	public float strafespeed;
+	public float speedup;
 	private Vector3 velocity;
+	private Vector3 prevVelocityY;
 	private MyMouseLook m_MouseLook;
 	private Quaternion rot;
-	public bool onground;
+	public bool hasshot;
     private Vector3 m_PlayerBottom;
-    public RaycastHit hit; 
+    public RaycastHit hit;
+	//public float mass;
+	//private float weight;
 
     //Player Speeds
     [SerializeField]
@@ -49,22 +53,26 @@ public class PlayerScript : MonoBehaviour
 		m_Camera.enabled = true;
 		cache_rb = this.GetComponent<Rigidbody>();
 		cache_tf = this.GetComponent<Transform>();
+		
 		m_MouseLook.Init(cache_tf, m_Camera.transform);
         m_Jetpack = false;
+		//weight = mass * 9.81;
         //m_JetForce = new Vector3(0.0f, 7.5f, 0.0f);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-        display = cache_tf.up * -1;
-        m_Velocity = this.GetComponent<Rigidbody>().velocity;
-        RotateView();
+        //display = cache_tf.up * -1;
+		m_Velocity = this.GetComponent<Rigidbody>().velocity;
 
-        m_PlayerBottom = this.transform.position;
-        m_PlayerBottom.y = m_PlayerBottom.y - 0.6f;
+		RotateView();
+
+        //m_PlayerBottom = this.transform.position;
+        //m_PlayerBottom.y = m_PlayerBottom.y - 0.6f;
         
         //Debug.DrawLine(m_PlayerBottom, m_PlayerBottom - new Vector3(0.0f, 3.0f, 0.0f) , Color.magenta, 2.0f);
+		/*
         if (Physics.Raycast(m_PlayerBottom, Vector3.down, 1.0f))//if (Physics.SphereCast(m_PlayerBottom, 0.5f, , out hit))//       new Vector3(0.0f, -1.0f, 0.0f)
         {
             //print("There is something below the object!");
@@ -73,12 +81,9 @@ public class PlayerScript : MonoBehaviour
         else
         {
             onground = false;
-        }
-            
+        }*/
 
-        #region Ground Movement
-        //if (onground == true)
-        if (Input.GetButton("r"))
+		if (Input.GetButton("r"))
 		{
 			b_Camera.enabled = true;
 			m_Camera.enabled = false;
@@ -88,82 +93,85 @@ public class PlayerScript : MonoBehaviour
 			b_Camera.enabled = false;
 			m_Camera.enabled = true;
 		}
-		
-		RotateView();
-
-		if (onground == true)
+		#region Ground Movement
+		if (hasshot == true)
 		{
-<<<<<<< HEAD:VGP333_GravityJumperPhysicsTest/Assets/Scripts/Player/PlayerScript.cs
+
+
 			float horizontal = Input.GetAxis("Horizontal");
 			float vertical = Input.GetAxis("Vertical");
 
+			//This block of code here is the problem zone
+			/////////////////////////////////////////////////////////////////////
+			//if (horizontal == 0)
+			//{
+			//	cache_rb.velocity = forspeed * vertical * cache_tf.forward;
+			//}
+			//else if (vertical == 0)
+			//{
+			//	cache_rb.velocity = cache_tf.right * horizontal * strafespeed;
+			//}
+			//else
+			//{
+			//	forw = forspeed * vertical * cache_tf.forward;
+			//	strafe = cache_tf.right * strafespeed * horizontal;
+			//	cache_rb.velocity = resultant(strafe, forw);
+			//}
+			////////////////////////////////////////////////////////////////////////
+
+			prevVelocityY.y = cache_rb.velocity.y;
+			Vector3 temp;
+
 			if (horizontal == 0)
 			{
-				cache_rb.velocity = forspeed * vertical * cache_tf.forward;
+				temp = forspeed * vertical * cache_tf.forward;
+				cache_rb.velocity = resultant(temp, prevVelocityY);
 			}
 			else if (vertical == 0)
 			{
-				cache_rb.velocity = cache_tf.right * horizontal * strafespeed; // Damping or the max velocity method.
+				temp = strafespeed * horizontal * cache_tf.right;
+				cache_rb.velocity = resultant(temp, prevVelocityY);
 			}
 			else
 			{
-				Vector3 forw = forspeed * vertical * cache_tf.forward;
-				Vector3 strafe = cache_tf.right * strafespeed * horizontal;
-				cache_rb.velocity = resultant(strafe, forw);
+
+				forw = forspeed * vertical * cache_tf.forward;
+				strafe = cache_tf.right * strafespeed * horizontal;
+				temp = resultant(strafe, forw)
+				cache_rb.velocity = resultant(temp, prevVelocityY);
 			}
+
 		}
-=======
-            //float horizontal = Input.GetAxis("Horizontal");
-            //float vertical = Input.GetAxis("Vertical");
+		/*
+		if (Input.GetKey(KeyCode.W))
+		{
+			cache_tf.Translate(Vector3.forward * Time.deltaTime * forspeed);
+			//cache_rb.AddForce(cache_tf.forward * m_JetForce);
+		}
 
-            //This block of code here is the problem zone
-            /////////////////////////////////////////////////////////////////////
-            //if (horizontal == 0)
-            //{
-            //	cache_rb.velocity = forspeed * vertical * cache_tf.forward;
-            //}
-            //else if (vertical == 0)
-            //{
-            //	cache_rb.velocity = cache_tf.right * horizontal * strafespeed;
-            //}
-            //else
-            //{
-            //	forw = forspeed * vertical * cache_tf.forward;
-            //	strafe = cache_tf.right * strafespeed * horizontal;
-            //	cache_rb.velocity = resultant(strafe, forw);
-            //}
-            ////////////////////////////////////////////////////////////////////////
-            if (Input.GetKey(KeyCode.W))
-            {
-                cache_tf.Translate(Vector3.forward * Time.deltaTime * forspeed);
-                //cache_rb.AddForce(cache_tf.forward * m_JetForce);
-            }
+		if (Input.GetKey(KeyCode.A))
+		{
+			cache_tf.Translate(Vector3.left * Time.deltaTime * forspeed);
+			//cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
+		}
 
-            if (Input.GetKey(KeyCode.A))
-            {
-                cache_tf.Translate(Vector3.left * Time.deltaTime * forspeed);
-                //cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
-            }
+		if (Input.GetKey(KeyCode.S))
+		{
+			cache_tf.Translate(Vector3.back * Time.deltaTime * forspeed);
+			//cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
+		}
 
-            if (Input.GetKey(KeyCode.S))
-            {
-                cache_tf.Translate(Vector3.back * Time.deltaTime * forspeed);
-                //cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
-            }
+		if (Input.GetKey(KeyCode.D))
+		{
+			cache_tf.Translate(Vector3.right * Time.deltaTime * forspeed);
+			//cache_rb.AddForce(cache_tf.right * m_JetForce);
+		}
+		*/
+		#endregion
 
-            if (Input.GetKey(KeyCode.D))
-            {
-                cache_tf.Translate(Vector3.right * Time.deltaTime * forspeed);
-                //cache_rb.AddForce(cache_tf.right * m_JetForce);
-            }
+		#region Velocity Damping
 
-        }
->>>>>>> 0fff0f3a65ac76eba4d91bb91e28800b9caab860:VGP333_GravityJumperPhysicsTest/Assets/Scripts/PlayerScript.cs
-        #endregion
-
-        #region Velocity Damping
-
-        if (m_Velocity.y < m_GravLimit.y)//v: Limit the Downward Velocity that Gravity can impose. Make things easier for the player.
+		if (m_Velocity.y < m_GravLimit.y)//v: Limit the Downward Velocity that Gravity can impose. Make things easier for the player.
         {
             cache_rb.AddForce(m_GravLimit * -1);
         }
@@ -252,7 +260,7 @@ public class PlayerScript : MonoBehaviour
 	{
 		if (other.GetComponent<GroundScript>() != null)
 		{
-			onground = true;
+			hasshot = true;
 		}
 	}
 
