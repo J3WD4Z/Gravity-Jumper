@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
 	private Vector3 prevVelocityY;
 	private MyMouseLook m_MouseLook;
 	private Quaternion rot;
-	public bool hasshot;
+	public bool hasnotshot;
     private Vector3 m_PlayerBottom;
     public RaycastHit hit;
 	//public float mass;
@@ -94,7 +94,7 @@ public class PlayerScript : MonoBehaviour
 			m_Camera.enabled = true;
 		}
 		#region Ground Movement
-		if (hasshot == true)
+		if (hasnotshot == true)
 		{
 
 
@@ -137,7 +137,7 @@ public class PlayerScript : MonoBehaviour
 
 				forw = forspeed * vertical * cache_tf.forward;
 				strafe = cache_tf.right * strafespeed * horizontal;
-				temp = resultant(strafe, forw)
+				temp = resultant(strafe, forw);
 				cache_rb.velocity = resultant(temp, prevVelocityY);
 			}
 
@@ -260,7 +260,7 @@ public class PlayerScript : MonoBehaviour
 	{
 		if (other.GetComponent<GroundScript>() != null)
 		{
-			hasshot = true;
+			hasnotshot = true;
 		}
 	}
 

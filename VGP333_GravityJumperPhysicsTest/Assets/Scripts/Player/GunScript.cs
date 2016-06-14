@@ -34,7 +34,7 @@ public class GunScript : MonoBehaviour
 			move = Vector3.zero;
 			move = move - (this.transform.forward * force);
 			playerbody.AddForce(move);
-			player.GetComponent<PlayerScript>().hasshot = false;
+			player.GetComponent<PlayerScript>().hasnotshot = false;
 		}
 		
 		/*

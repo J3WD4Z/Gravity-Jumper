@@ -3,20 +3,21 @@ using System.Collections;
 
 public class GroundScript : MonoBehaviour
 {
-	public float force;
-	public bool pull;
-	private Transform cache_tf;
-	public GameObject player;
+	//public float force;
+	//public bool pull;
+	//private Transform cache_tf;
+	//public GameObject player;
 
 	// Use this for initialization
 	void Start ()
 	{
-		pull = false;
+		//pull = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		/*
 		if (player != null)
 		{
 			if (pull)
@@ -27,19 +28,19 @@ public class GroundScript : MonoBehaviour
 				Debug.DrawRay(player.transform.position, p_force, Color.red);
 			}
 		
-			if (player.GetComponent<PlayerScript>().hasshot == true)
+			if (player.GetComponent<PlayerScript>().hasnotshot == true)
 			{
 				pull = false;
 			}
-		}
+		}*/
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.GetComponent<PlayerScript>() != null)
-		{
-			pull = true;
-		}
+		//if(other.GetComponent<PlayerScript>() != null)
+		//{
+		//	pull = true;
+		//}
 	}
 
 	Vector3 findvec(Vector3 a,Vector3 b)
@@ -53,6 +54,6 @@ public class GroundScript : MonoBehaviour
 
 	public void OnDrawGizmos()
 	{
-		Gizmos.DrawWireSphere(transform.position, GetComponent<SphereCollider>().radius * transform.lossyScale.x);
+		//Gizmos.DrawWireSphere(transform.position, GetComponent<SphereCollider>().radius * transform.lossyScale.x);
 	}
 }

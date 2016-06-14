@@ -185,6 +185,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11449494, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
+      propertyPath: m_Ammo
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
   m_IsPrefabParent: 0
@@ -266,10 +270,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1 &1033596543 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 197724, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
-  m_PrefabInternal: {fileID: 235911600}
 --- !u!1 &1629369786
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,9 +358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f625c5db7f093824f89d137cb4a298c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 30
-  pull: 0
-  player: {fileID: 1033596543}
 --- !u!135 &1629369792
 SphereCollider:
   m_ObjectHideFlags: 0
