@@ -191,6 +191,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 11449494, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
       propertyPath: m_Ammo
       value: 5
@@ -215,6 +216,8 @@ Prefab:
       propertyPath: m_NegativeLimit
       value: 10
       objectReference: {fileID: 0}
+=======
+>>>>>>> d48886c32b72986090801991afea98dc7cd8b8b2
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
   m_IsPrefabParent: 0
@@ -497,7 +500,6 @@ GameObject:
   - 64: {fileID: 1629369788}
   - 23: {fileID: 1629369787}
   - 114: {fileID: 1629369791}
-  - 135: {fileID: 1629369792}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -573,6 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f625c5db7f093824f89d137cb4a298c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   shotsgiven: 5
 --- !u!135 &1629369792
 SphereCollider:
@@ -590,3 +593,5 @@ SphereCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 197724, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
   m_PrefabInternal: {fileID: 235911600}
+=======
+>>>>>>> d48886c32b72986090801991afea98dc7cd8b8b2

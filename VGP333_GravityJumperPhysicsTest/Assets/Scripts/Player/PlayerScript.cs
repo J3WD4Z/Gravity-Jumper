@@ -64,8 +64,12 @@ public class PlayerScript : MonoBehaviour
 	{
         //display = cache_tf.up * -1;
 		m_Velocity = this.GetComponent<Rigidbody>().velocity;
-
-		RotateView();
+        if (Input.GetKey(KeyCode.Space))
+        {
+            hasnotshot = false;
+            cache_rb.AddForce(new Vector3(0.0f, 1000.0f, 0.0f));
+        }
+        RotateView();
 
         //m_PlayerBottom = this.transform.position;
         //m_PlayerBottom.y = m_PlayerBottom.y - 0.6f;
