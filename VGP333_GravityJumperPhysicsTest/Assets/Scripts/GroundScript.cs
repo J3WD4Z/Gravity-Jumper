@@ -4,6 +4,7 @@ using System.Collections;
 public class GroundScript : MonoBehaviour
 {
 	public int shotsgiven;
+	public float fuelgiven;
 
 	private GameObject gun;
 
@@ -27,6 +28,7 @@ public class GroundScript : MonoBehaviour
 		if(player.GetComponent<PlayerScript>().hasnotshot)
 		{
 			gun.GetComponent<GunScript>().m_Ammo = shotsgiven;
+			player.GetComponent<PlayerScript>().m_Fuel = fuelgiven;
 		}
 		/*
 		if (player != null)

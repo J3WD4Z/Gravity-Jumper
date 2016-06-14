@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class ApplicationManager : MonoBehaviour {
-	
-
+public class ApplicationManager : MonoBehaviour
+{
 	public void Quit () 
 	{
 		#if UNITY_EDITOR
@@ -11,5 +11,10 @@ public class ApplicationManager : MonoBehaviour {
 		#else
 		Application.Quit();
 		#endif
+	}
+
+	public void NewGame()
+	{
+		SceneManager.LoadScene("GunTest");
 	}
 }

@@ -16,9 +16,4 @@ public class ButtonFunc : MonoBehaviour
 	{
 	
 	}
-
-	public void NewGame()
-	{
-		SceneManager.LoadScene("GunTest");
-	}
 }
