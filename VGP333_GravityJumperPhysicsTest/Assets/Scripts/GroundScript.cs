@@ -3,31 +3,20 @@ using System.Collections;
 
 public class GroundScript : MonoBehaviour
 {
-	public int shotsgiven;
-
-	private GameObject gun;
-
 	//public float force;
 	//public bool pull;
 	//private Transform cache_tf;
-
-	private GameObject player;
+	//public GameObject player;
 
 	// Use this for initialization
 	void Start ()
 	{
-		player = GameManager.Instance.mPlayer;
-		gun = GameManager.Instance.mGun;
 		//pull = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if(player.GetComponent<PlayerScript>().hasnotshot)
-		{
-			gun.GetComponent<GunScript>().m_Ammo = shotsgiven;
-		}
 		/*
 		if (player != null)
 		{

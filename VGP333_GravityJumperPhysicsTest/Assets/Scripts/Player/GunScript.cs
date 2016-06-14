@@ -8,7 +8,7 @@ public class GunScript : MonoBehaviour
 	//public float lerptime;
 	//private float timer;
 	//public bool test
-	private GameObject player;
+	public GameObject player;
 	private Transform playertrans;
 	private Rigidbody playerbody;
 	private Vector3 move;
@@ -23,7 +23,6 @@ public class GunScript : MonoBehaviour
 	{
 		//lrp = false;
 		//timer = 0;
-		player = GameManager.Instance.mPlayer;
 		playertrans = player.GetComponent<Transform>();
 		playerbody = player.GetComponent<Rigidbody>();
         m_GunSmokePS = m_GunSmokeOb.GetComponent<ParticleSystem>();
