@@ -518,6 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f625c5db7f093824f89d137cb4a298c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   shotsgiven: 5
   fuelgiven: 500
 --- !u!135 &1629369792
