@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject mPlayer;
-	public GameObject mGun;
     public CheckpointSystem mCheckPointSystem;
     public Death_Zone mDeathZone;
     public GameOver mGameOver;

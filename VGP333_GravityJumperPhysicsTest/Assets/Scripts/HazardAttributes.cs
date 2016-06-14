@@ -8,6 +8,9 @@ public class HazardAttributes : MonoBehaviour {
     //Hazard's Own Damping
     public Vector3 m_HazardUpForce; // Force to counter Gravity
 
+    //To Diversify Hazard Spawning...directions
+    public Vector3 m_HazardSpawnForce;
+
     [SerializeField]
     private Rigidbody m_Rigidbody;
     [SerializeField]
@@ -17,6 +20,8 @@ public class HazardAttributes : MonoBehaviour {
 	void Start () {
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Transform = GetComponent<Transform>();
+        m_HazardSpawnForce = new Vector3(Random.Range(-500.0f, 500.0f), Random.Range(-500.0f, 500.0f), Random.Range(-500.0f, 500.0f));
+        m_Rigidbody.AddForce(m_HazardSpawnForce);
 	}
 	
 	// Update is called once per frame

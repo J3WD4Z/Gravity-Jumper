@@ -3,33 +3,36 @@ using System.Collections;
 
 public class GroundScript : MonoBehaviour
 {
+<<<<<<< HEAD
 	public int shotsgiven;
 	public float fuelgiven;
 
 	private GameObject gun;
 
+=======
+>>>>>>> 24dc71427b38ee8125611ab50efd489aacc049cc
 	//public float force;
 	//public bool pull;
 	//private Transform cache_tf;
-
-	private GameObject player;
+	//public GameObject player;
 
 	// Use this for initialization
 	void Start ()
 	{
-		player = GameManager.Instance.mPlayer;
-		gun = GameManager.Instance.mGun;
 		//pull = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+<<<<<<< HEAD
 		if(player.GetComponent<PlayerScript>().hasnotshot)
 		{
 			gun.GetComponent<GunScript>().m_Ammo = shotsgiven;
 			player.GetComponent<PlayerScript>().m_Fuel = fuelgiven;
 		}
+=======
+>>>>>>> 24dc71427b38ee8125611ab50efd489aacc049cc
 		/*
 		if (player != null)
 		{
