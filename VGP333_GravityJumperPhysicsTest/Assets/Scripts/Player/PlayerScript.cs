@@ -12,7 +12,6 @@ public class PlayerScript : MonoBehaviour
 	private Transform cache_tf;
 	public float forspeed;
 	public float strafespeed;
-	public float speedup;
 	private Vector3 velocity;
 	private Vector3 prevVelocityY;
 	private MyMouseLook m_MouseLook;

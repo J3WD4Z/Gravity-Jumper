@@ -26,5 +26,5 @@ public class GameManager : MonoBehaviour
 	public LifePlus mLifePlus;
 	public PickUps mPickUps;
     public TextManager mTextManager;
-
+	public FuelManager mFuelManager;
 }
