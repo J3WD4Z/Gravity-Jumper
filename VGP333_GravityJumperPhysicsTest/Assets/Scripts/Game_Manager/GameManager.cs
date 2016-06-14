@@ -4,20 +4,27 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    private Checkpoint checkPoint;
-    private Death_Zone deathZone;
-    private GameOver gameOver;
-    private HealthManager health;
-    private Level_Timer timer;
-
-
-	void Start ()
+    private static GameManager s_Instance;
+    public static GameManager Instance
     {
-                 
+        get
+        {
+            if (s_Instance == null)
+            {
+                s_Instance = FindObjectOfType<GameManager>();
+            }
+            return s_Instance;
+        }
     }
 
-    void Update()
-    {
-      
-    }
+    public GameObject mPlayer;
+    public CheckpointSystem mCheckPointSystem;
+    public Death_Zone mDeathZone;
+    public GameOver mGameOver;
+    public HealthManager mHealthManager;
+    public Timer mTimer;
+	public LifePlus mLifePlus;
+	public PickUps mPickUps;
+    public TextManager mTextManager;
+
 }

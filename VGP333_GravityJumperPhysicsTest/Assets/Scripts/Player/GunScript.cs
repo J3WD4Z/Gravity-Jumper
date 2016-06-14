@@ -12,8 +12,9 @@ public class GunScript : MonoBehaviour
 	private Transform playertrans;
 	private Rigidbody playerbody;
 	private Vector3 move;
-	//private Vector3 playerpos;
-	//private bool lrp;
+    //private Vector3 playerpos;
+    //private bool lrp;
+    public int m_Ammo;
 
 	// Use this for initialization
 	void Start ()
@@ -27,8 +28,9 @@ public class GunScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetButtonDown("Fire1"))
+		if (Input.GetButtonDown("Fire1") && m_Ammo > 0)
 		{
+            m_Ammo--;
 			move = Vector3.zero;
 			move = move - (this.transform.forward * force);
 			playerbody.AddForce(move);

@@ -16,39 +16,69 @@ public class PlayerScript : MonoBehaviour
 	private MyMouseLook m_MouseLook;
 	private Quaternion rot;
 	public bool onground;
+    private Vector3 m_PlayerBottom;
+    public RaycastHit hit; 
+
+    //Player Speeds
     [SerializeField]
     private Vector3 m_Velocity;
-    public float m_GravLimit;
     [SerializeField]
     private Quaternion m_Rotation;
+
+    public Vector3 display;
     [SerializeField]
-    private int m_Ammo;
+    private Vector3 forw;
     [SerializeField]
-    private float m_Fuel;
+    private Vector3 strafe;
+
+    //Jetpack Values
+    public float m_Fuel;
     [SerializeField]
     private bool m_Jetpack;
-    private Vector3 m_JetForce;
-    
-        
-	
+    public float m_JetForce;
+
+    //Damping Values
+    public float m_PositiveLimit;
+    public float m_NegativeLimit;
+    public Vector3 m_GravLimit;
 
     // Use this for initialization
     void Start ()
 	{
-        m_Fuel = 500.0f;
 		m_MouseLook = this.GetComponent<MyMouseLook>();
 		m_Camera.enabled = true;
 		cache_rb = this.GetComponent<Rigidbody>();
 		cache_tf = this.GetComponent<Transform>();
 		m_MouseLook.Init(cache_tf, m_Camera.transform);
         m_Jetpack = false;
-        m_JetForce = new Vector3(0.0f, 10.0f, 0.0f);
+        //m_JetForce = new Vector3(0.0f, 7.5f, 0.0f);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetButton("r"))
+        display = cache_tf.up * -1;
+        m_Velocity = this.GetComponent<Rigidbody>().velocity;
+        RotateView();
+
+        m_PlayerBottom = this.transform.position;
+        m_PlayerBottom.y = m_PlayerBottom.y - 0.6f;
+        
+        //Debug.DrawLine(m_PlayerBottom, m_PlayerBottom - new Vector3(0.0f, 3.0f, 0.0f) , Color.magenta, 2.0f);
+        if (Physics.Raycast(m_PlayerBottom, Vector3.down, 1.0f))//if (Physics.SphereCast(m_PlayerBottom, 0.5f, , out hit))//       new Vector3(0.0f, -1.0f, 0.0f)
+        {
+            //print("There is something below the object!");
+            onground = true;
+        }
+        else
+        {
+            onground = false;
+        }
+            
+
+        #region Ground Movement
+        //if (onground == true)
+        if (Input.GetButton("r"))
 		{
 			b_Camera.enabled = true;
 			m_Camera.enabled = false;
@@ -58,13 +88,12 @@ public class PlayerScript : MonoBehaviour
 			b_Camera.enabled = false;
 			m_Camera.enabled = true;
 		}
-		m_Velocity = this.GetComponent<Rigidbody>().velocity;
-        RotateView();
-
-        #region Ground Movement
+		
+		RotateView();
 
 		if (onground == true)
 		{
+<<<<<<< HEAD:VGP333_GravityJumperPhysicsTest/Assets/Scripts/Player/PlayerScript.cs
 			float horizontal = Input.GetAxis("Horizontal");
 			float vertical = Input.GetAxis("Vertical");
 
@@ -83,23 +112,95 @@ public class PlayerScript : MonoBehaviour
 				cache_rb.velocity = resultant(strafe, forw);
 			}
 		}
-        #endregion
-        
-        if (m_Velocity.y < m_GravLimit)//v: Limit the Downward Velocity that Gravity can impose. Make things easier for the player.
-        {
-            m_Velocity.y = m_GravLimit;
+=======
+            //float horizontal = Input.GetAxis("Horizontal");
+            //float vertical = Input.GetAxis("Vertical");
+
+            //This block of code here is the problem zone
+            /////////////////////////////////////////////////////////////////////
+            //if (horizontal == 0)
+            //{
+            //	cache_rb.velocity = forspeed * vertical * cache_tf.forward;
+            //}
+            //else if (vertical == 0)
+            //{
+            //	cache_rb.velocity = cache_tf.right * horizontal * strafespeed;
+            //}
+            //else
+            //{
+            //	forw = forspeed * vertical * cache_tf.forward;
+            //	strafe = cache_tf.right * strafespeed * horizontal;
+            //	cache_rb.velocity = resultant(strafe, forw);
+            //}
+            ////////////////////////////////////////////////////////////////////////
+            if (Input.GetKey(KeyCode.W))
+            {
+                cache_tf.Translate(Vector3.forward * Time.deltaTime * forspeed);
+                //cache_rb.AddForce(cache_tf.forward * m_JetForce);
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                cache_tf.Translate(Vector3.left * Time.deltaTime * forspeed);
+                //cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                cache_tf.Translate(Vector3.back * Time.deltaTime * forspeed);
+                //cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                cache_tf.Translate(Vector3.right * Time.deltaTime * forspeed);
+                //cache_rb.AddForce(cache_tf.right * m_JetForce);
+            }
+
         }
+>>>>>>> 0fff0f3a65ac76eba4d91bb91e28800b9caab860:VGP333_GravityJumperPhysicsTest/Assets/Scripts/PlayerScript.cs
+        #endregion
+
+        #region Velocity Damping
+
+        if (m_Velocity.y < m_GravLimit.y)//v: Limit the Downward Velocity that Gravity can impose. Make things easier for the player.
+        {
+            cache_rb.AddForce(m_GravLimit * -1);
+        }
+
+        if(m_Velocity.x < m_NegativeLimit)
+        {
+            cache_rb.AddForce(1.5f, 0.0f, 0.0f);
+        }
+
+        if(m_Velocity.x > m_PositiveLimit)
+        {
+            cache_rb.AddForce(-1.5f, 0.0f, 0.0f);
+        }
+
+        if (m_Velocity.z < m_NegativeLimit)
+        {
+            cache_rb.AddForce(0.0f, 0.0f, 1.5f);
+        }
+
+        if (m_Velocity.z > m_PositiveLimit)
+        {
+            cache_rb.AddForce(0.0f, 0.0f, -1.5f);
+        }
+
+        #endregion
 
         #region Jetpack Code
 
-        if(m_Fuel <= 0.0f)
+        if (m_Fuel <= 0.0f)
         {
             m_Jetpack = false;
         }
 
         if(Input.GetButton("Fire2") && m_Fuel > 0.0f)
         {
-            cache_rb.AddForce(m_JetForce);
+            //cache_rb.AddForce(m_JetForce);
+
             m_Fuel = m_Fuel - 0.5f;
             m_Jetpack = true;
         }
@@ -114,22 +215,26 @@ public class PlayerScript : MonoBehaviour
 
             if(Input.GetKey(KeyCode.W))
             {
-                cache_tf.Translate(Vector3.forward * Time.deltaTime);
+                //cache_tf.Translate(Vector3.forward * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.forward * m_JetForce);
             }
 
             if (Input.GetKey(KeyCode.A))
             {
-                cache_tf.Translate(Vector3.left * Time.deltaTime);
+                //cache_tf.Translate(Vector3.left * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
             }
 
             if (Input.GetKey(KeyCode.S))
             {
-                cache_tf.Translate(Vector3.back * Time.deltaTime);
+                //cache_tf.Translate(Vector3.back * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                cache_tf.Translate(Vector3.right * Time.deltaTime);
+                //cache_tf.Translate(Vector3.right * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.right * m_JetForce);
             }
         }
 

@@ -1,0 +1,10 @@
+GameManager	:5/9
+DeathZone	:Done
+LevelTimer	:Done
+JumpCount	:4
+CollectableObj	:Done
+LevelSystem	:2
+CoinScore	:Done
+AiSpawner	:1
+Life+		:Done
+MessageSystem:	:2

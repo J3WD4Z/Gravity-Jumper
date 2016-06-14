@@ -4,9 +4,7 @@ using System.Collections;
 public class GameOver : MonoBehaviour
 {
     private HealthManager health;
-    private Checkpoint checkPoint;
     
-
 	void Start ()
     {
         
@@ -19,8 +17,8 @@ public class GameOver : MonoBehaviour
 
     public void gameOver()
     {
-        checkPoint.checks();
+		GameManager.Instance.mCheckPointSystem.RespawnPlayer ();
         //Display GameOver Screen
-        Debug.Log("You lose Bro!");
+        Debug.Log("You lose");
     }
 }
