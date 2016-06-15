@@ -36,7 +36,7 @@ public class GunScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetButtonDown("Fire1") )//&& m_Ammo > 0)
+		if (Input.GetButtonDown("Fire1") && m_Ammo > 0)
 		{
 
             m_GunSmoke.gameObject.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);

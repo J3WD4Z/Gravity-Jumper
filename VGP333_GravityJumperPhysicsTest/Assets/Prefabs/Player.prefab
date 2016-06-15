@@ -628,8 +628,8 @@ MonoBehaviour:
   strafedir: {x: 0, y: 0, z: 0}
   m_Camera: {fileID: 2098496}
   b_Camera: {fileID: 2088346}
-  forspeed: 4
-  strafespeed: 4
+  forspeed: 5
+  strafespeed: 5
   jetupforce: 10
   hasnotshot: 0
   m_Rotation: {x: 0, y: 0, z: 0, w: 0}
