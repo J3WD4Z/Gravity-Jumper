@@ -34,6 +34,7 @@ public class GunScript : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Fire1") )//&& m_Ammo > 0)
 		{
+
             m_GunSmoke.gameObject.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
             m_GunSmoke.Play();
             m_GunFire.gameObject.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);

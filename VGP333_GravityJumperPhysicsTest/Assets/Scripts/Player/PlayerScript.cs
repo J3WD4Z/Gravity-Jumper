@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
 	private Transform cache_tf;
 	public float forspeed;
 	public float strafespeed;
-	public float jumpforce;
+	public float jetupforce;
 	private Vector3 velocity;
 	private Vector3 prevVelocityY;
 	private MyMouseLook m_MouseLook;
@@ -65,11 +65,7 @@ public class PlayerScript : MonoBehaviour
 	{
         //display = cache_tf.up * -1;
 		m_Velocity = this.GetComponent<Rigidbody>().velocity;
-        if (Input.GetKey(KeyCode.Space))
-        {
-            hasnotshot = false;
-            cache_rb.AddForce(new Vector3(0.0f, jumpforce, 0.0f));
-        }
+        
         RotateView();
 
         //m_PlayerBottom = this.transform.position;
@@ -213,7 +209,6 @@ public class PlayerScript : MonoBehaviour
         {
             //cache_rb.AddForce(m_JetForce);
 
-            m_Fuel = m_Fuel - 0.5f;
             m_Jetpack = true;
         }
 
@@ -225,30 +220,41 @@ public class PlayerScript : MonoBehaviour
         if(m_Jetpack == true)
         {
 
-            if(Input.GetKey(KeyCode.W))
-            {
-                //cache_tf.Translate(Vector3.forward * Time.deltaTime);
-                cache_rb.AddForce(cache_tf.forward * m_JetForce);
-            }
+			if (Input.GetKey(KeyCode.Space))
+			{
+				hasnotshot = false;
+				cache_rb.AddForce(new Vector3(0.0f, jetupforce, 0.0f));
+				m_Fuel = m_Fuel - 0.5f;
+			}
 
-            if (Input.GetKey(KeyCode.A))
-            {
-                //cache_tf.Translate(Vector3.left * Time.deltaTime);
-                cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
-            }
+			if (Input.GetKey(KeyCode.W))
+			{
+				//cache_tf.Translate(Vector3.forward * Time.deltaTime);
+				cache_rb.AddForce(cache_tf.forward * m_JetForce);
+				m_Fuel = m_Fuel - 0.5f;
+			}
 
-            if (Input.GetKey(KeyCode.S))
-            {
-                //cache_tf.Translate(Vector3.back * Time.deltaTime);
-                cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
-            }
+			if (Input.GetKey(KeyCode.A))
+			{
+				//cache_tf.Translate(Vector3.left * Time.deltaTime);
+				cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
+				m_Fuel = m_Fuel - 0.5f;
+			}
 
-            if (Input.GetKey(KeyCode.D))
-            {
-                //cache_tf.Translate(Vector3.right * Time.deltaTime);
-                cache_rb.AddForce(cache_tf.right * m_JetForce);
-            }
-        }
+			if (Input.GetKey(KeyCode.S))
+			{
+				//cache_tf.Translate(Vector3.back * Time.deltaTime);
+				cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
+				m_Fuel = m_Fuel - 0.5f;
+			}
+
+			if (Input.GetKey(KeyCode.D))
+			{
+				//cache_tf.Translate(Vector3.right * Time.deltaTime);
+				cache_rb.AddForce(cache_tf.right * m_JetForce);
+				m_Fuel = m_Fuel - 0.5f;
+			}
+		}
 
         #endregion
 
@@ -270,14 +276,14 @@ public class PlayerScript : MonoBehaviour
 
 	private void RotateView()
 	{
-		Quaternion rotation = Quaternion.AngleAxis(180, Vector3.up);
+		//Quaternion rotation = Quaternion.AngleAxis(180, m_Camera.transform.up);
 		Quaternion player = cache_tf.localRotation;
 		Quaternion cam = m_Camera.transform.localRotation;
 		
 		m_MouseLook.LookRotation(ref player,ref cam);
 
 		cache_tf.localRotation = player;
-		b_Camera.transform.localRotation = rotation * cam;
+		//b_Camera.transform.localRotation = rotation * cam;
 		m_Camera.transform.localRotation = cam;
 	}
 

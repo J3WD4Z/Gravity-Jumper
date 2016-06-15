@@ -15,6 +15,6 @@ public class ApplicationManager : MonoBehaviour
 
 	public void NewGame()
 	{
-		SceneManager.LoadScene("GunTest");
+		SceneManager.LoadScene("Level01");
 	}
 }

@@ -20,7 +20,8 @@ public class FuelManager : MonoBehaviour
 	{
 		if (psc != null)
 		{
-			FuelText.text = "Fuel = " + psc.m_Fuel;
+			string fuel = "Fuel: " + (int)psc.m_Fuel;
+			FuelText.text = fuel;
 		}
 	}
 }
