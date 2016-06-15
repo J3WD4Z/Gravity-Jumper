@@ -128,11 +128,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 181880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5c3b18b97c954a4595014fcfb8310c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 65a1b90b50c9dfb4bb9f7ef3a3f82784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Lifetime: 10
   m_HazardUpForce: {x: 0, y: 0, z: 0}
+  m_HazardSpawnForce: {x: 0, y: 0, z: 0}
   m_Rigidbody: {fileID: 0}
   m_Transform: {fileID: 0}
 --- !u!1001 &100100000

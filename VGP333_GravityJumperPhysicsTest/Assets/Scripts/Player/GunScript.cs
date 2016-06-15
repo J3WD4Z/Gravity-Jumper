@@ -16,6 +16,7 @@ public class GunScript : MonoBehaviour
     //private bool lrp;
     public int m_Ammo;
     public ParticleSystem m_GunSmoke;
+    public ParticleSystem m_GunFire;
 
     // Use this for initialization
     void Start ()
@@ -31,10 +32,12 @@ public class GunScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetButtonDown("Fire1") && m_Ammo > 0)
+		if (Input.GetButtonDown("Fire1") )//&& m_Ammo > 0)
 		{
             m_GunSmoke.gameObject.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
             m_GunSmoke.Play();
+            m_GunFire.gameObject.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+            m_GunFire.Play();
             m_Ammo--;
 			move = Vector3.zero;
 			move = move - (this.transform.forward * force);
