@@ -1788,6 +1788,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11479332, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
+      propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 1616328053}
     - target: {fileID: 11474736, guid: 4c21e9e328448c04fa49e708d6c2b00d, type: 2}
       propertyPath: scoreText
       value: 
@@ -2963,6 +2967,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1502904816}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1616328053 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11473218, guid: 1e9594f467931fd44b785e8d35bd7f9b,
+    type: 2}
+  m_PrefabInternal: {fileID: 722224042}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1662643822
 GameObject:
   m_ObjectHideFlags: 0

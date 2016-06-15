@@ -36,7 +36,6 @@ public class PlayerScript : MonoBehaviour
     private Vector3 forw;
     [SerializeField]
     private Vector3 strafe;
-
     //Jetpack Values
     public float m_Fuel;
     [SerializeField]
@@ -48,6 +47,10 @@ public class PlayerScript : MonoBehaviour
     public float m_NegativeLimit;
     public Vector3 m_GravLimit;
 
+    //Audio Source
+    private AudioSource m_JetpackSound;
+    private AudioSource m_Footsteps;
+
     // Use this for initialization
     void Start ()
 	{
@@ -55,8 +58,9 @@ public class PlayerScript : MonoBehaviour
 		m_Camera.enabled = true;
 		cache_rb = this.GetComponent<Rigidbody>();
 		cache_tf = this.GetComponent<Transform>();
-		
-		m_MouseLook.Init(cache_tf, m_Camera.transform);
+        m_JetpackSound = this.GetComponent<AudioSource>();
+        m_Footsteps = m_Camera.GetComponent<AudioSource>();
+        m_MouseLook.Init(cache_tf, m_Camera.transform);
         m_Jetpack = false;
 		//weight = mass * 9.81;
         //m_JetForce = new Vector3(0.0f, 7.5f, 0.0f);
@@ -98,35 +102,33 @@ public class PlayerScript : MonoBehaviour
 		#region Ground Movement
 		if (hasnotshot == true)
 		{
-
-
 			float horizontal = Input.GetAxis("Horizontal");
 			float vertical = Input.GetAxis("Vertical");
 
-			//This block of code here is the problem zone
-			/////////////////////////////////////////////////////////////////////
-			//if (horizontal == 0)
-			//{
-			//	cache_rb.velocity = forspeed * vertical * cache_tf.forward;
-			//}
-			//else if (vertical == 0)
-			//{
-			//	cache_rb.velocity = cache_tf.right * horizontal * strafespeed;
-			//}
-			//else
-			//{
-			//	forw = forspeed * vertical * cache_tf.forward;
-			//	strafe = cache_tf.right * strafespeed * horizontal;
-			//	cache_rb.velocity = resultant(strafe, forw);
-			//}
-			////////////////////////////////////////////////////////////////////////
-
-			prevVelocityY.y = cache_rb.velocity.y;
+            //This block of code here is the problem zone
+            /////////////////////////////////////////////////////////////////////
+            //if (horizontal == 0)
+            //{
+            //	cache_rb.velocity = forspeed * vertical * cache_tf.forward;
+            //}
+            //else if (vertical == 0)
+            //{
+            //	cache_rb.velocity = cache_tf.right * horizontal * strafespeed;
+            //}
+            //else
+            //{
+            //	forw = forspeed * vertical * cache_tf.forward;
+            //	strafe = cache_tf.right * strafespeed * horizontal;
+            //	cache_rb.velocity = resultant(strafe, forw);
+            //}
+            ////////////////////////////////////////////////////////////////////////
+            prevVelocityY.y = cache_rb.velocity.y;
 			Vector3 temp;
 
 			if (horizontal == 0)
 			{
-				temp = forspeed * vertical * cache_tf.forward;
+                //m_Footsteps.Play();
+                temp = forspeed * vertical * cache_tf.forward;
 
                 cache_rb.velocity = resultant(temp, prevVelocityY);
             }
@@ -134,7 +136,8 @@ public class PlayerScript : MonoBehaviour
 
 			else if (vertical == 0)
 			{
-				temp = strafespeed * horizontal * cache_tf.right;
+                //m_Footsteps.Play();
+                temp = strafespeed * horizontal * cache_tf.right;
 				cache_rb.velocity = resultant(temp, prevVelocityY);
 
             }
@@ -142,8 +145,8 @@ public class PlayerScript : MonoBehaviour
 
 			else
 			{
-
-				forw = forspeed * vertical * cache_tf.forward;
+                m_Footsteps.Play();
+                forw = forspeed * vertical * cache_tf.forward;
 				strafe = cache_tf.right * strafespeed * horizontal;
 				temp = resultant(strafe, forw);
 				cache_rb.velocity = resultant(temp, prevVelocityY);
@@ -217,7 +220,6 @@ public class PlayerScript : MonoBehaviour
         if(Input.GetButton("Fire2") && m_Fuel > 0.0f)
         {
             //cache_rb.AddForce(m_JetForce);
-
             m_Jetpack = true;
         }
 
@@ -228,15 +230,16 @@ public class PlayerScript : MonoBehaviour
 
         if(m_Jetpack == true)
         {
-
             if (Input.GetKey(KeyCode.Space))
             {
+                m_JetpackSound.Play();
                 hasnotshot = false;
                 cache_rb.AddForce(new Vector3(0.0f, jetupforce, 0.0f));
                 m_Fuel = m_Fuel - 0.5f;
             }
             if (Input.GetKey(KeyCode.W))
             {
+                m_JetpackSound.Play();
                 //cache_tf.Translate(Vector3.forward * Time.deltaTime);
                 cache_rb.AddForce(cache_tf.forward * m_JetForce);
                 m_Fuel = m_Fuel - 0.5f;
@@ -244,6 +247,7 @@ public class PlayerScript : MonoBehaviour
 
             if (Input.GetKey(KeyCode.A))
             {
+                m_JetpackSound.Play();
                 //cache_tf.Translate(Vector3.left * Time.deltaTime);
                 cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
                 m_Fuel = m_Fuel - 0.5f;
@@ -251,6 +255,7 @@ public class PlayerScript : MonoBehaviour
 
             if (Input.GetKey(KeyCode.S))
             {
+                m_JetpackSound.Play();
                 //cache_tf.Translate(Vector3.back * Time.deltaTime);
                 cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
                 m_Fuel = m_Fuel - 0.5f;
@@ -258,6 +263,7 @@ public class PlayerScript : MonoBehaviour
 
             if (Input.GetKey(KeyCode.D))
             {
+                m_JetpackSound.Play();
                 //cache_tf.Translate(Vector3.right * Time.deltaTime);
                 cache_rb.AddForce(cache_tf.right * m_JetForce);
                 m_Fuel = m_Fuel - 0.5f;

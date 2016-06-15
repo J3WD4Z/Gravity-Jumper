@@ -16,7 +16,7 @@ public class GunScript : MonoBehaviour
     //private Vector3 playerpos;
     //private bool lrp;
     public int m_Ammo;
-
+    private AudioSource m_GunSound;
     public ParticleSystem m_GunSmoke;
     public ParticleSystem m_GunFire;
 
@@ -30,7 +30,7 @@ public class GunScript : MonoBehaviour
 		player = GameManager.Instance.mPlayer;
 		playertrans = player.GetComponent<Transform>();
 		playerbody = player.GetComponent<Rigidbody>();
-
+        m_GunSound = this.GetComponent<AudioSource>();
 
         m_GunSmoke = m_GunSmoke.GetComponent<ParticleSystem>();
 
@@ -42,7 +42,7 @@ public class GunScript : MonoBehaviour
         AmmoText.text = "Ammo: " + m_Ammo;
         if (Input.GetButtonDown("Fire1") && m_Ammo > 0)
 		{
-
+            m_GunSound.Play();
             m_GunSmoke.gameObject.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
             m_GunSmoke.Play();
             m_GunFire.gameObject.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);

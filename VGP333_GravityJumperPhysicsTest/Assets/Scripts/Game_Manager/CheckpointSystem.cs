@@ -49,5 +49,7 @@ public class CheckpointSystem : MonoBehaviour
 	public void RespawnPlayer()
 	{
 		ResetObject(GameManager.Instance.mPlayer.transform);
-	}
+        GameManager.Instance.mPlayer.GetComponent<PlayerScript>().m_Fuel = 100;
+        GameManager.Instance.mGun.GetComponent<GunScript>().m_Ammo = 3;
+    }
 }

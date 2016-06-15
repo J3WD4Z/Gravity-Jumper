@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameOver : MonoBehaviour
@@ -17,8 +18,10 @@ public class GameOver : MonoBehaviour
 
     public void gameOver()
     {
-		GameManager.Instance.mCheckPointSystem.RespawnPlayer ();
+        Destroy(GameManager.Instance.mPlayer);
         //Display GameOver Screen
         Debug.Log("You lose");
+        //Application.LoadLevel("StatingMenu");
+        SceneManager.LoadScene("StatingMenu");
     }
 }
