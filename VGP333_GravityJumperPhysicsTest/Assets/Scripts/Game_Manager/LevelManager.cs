@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public int Level = 1;
-
+    public GameObject Warp; 
     public Text levelText;
 
 	void Start ()
@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
         DontDestroyOnLoad(GameManager.Instance.mAiSpawnManager);
         DontDestroyOnLoad(GameManager.Instance.mLevelManager);
         DontDestroyOnLoad(GameManager.Instance.mGameOver);
+        
 }
 	
 	void Update ()
@@ -32,7 +33,7 @@ public class LevelManager : MonoBehaviour
     {
         if(other.CompareTag( "Player" ) )
         {
-            SceneManager.LoadScene( "TestScene" );
+            SceneManager.LoadScene( "Level02" );
         }
     }
 

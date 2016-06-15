@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 
@@ -19,6 +20,8 @@ public class GunScript : MonoBehaviour
     public ParticleSystem m_GunSmoke;
     public ParticleSystem m_GunFire;
 
+    public Text AmmoText;
+
     // Use this for initialization
     void Start ()
 	{
@@ -36,7 +39,8 @@ public class GunScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetButtonDown("Fire1") && m_Ammo > 0)
+        AmmoText.text = "Ammo: " + m_Ammo;
+        if (Input.GetButtonDown("Fire1") && m_Ammo > 0)
 		{
 
             m_GunSmoke.gameObject.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);

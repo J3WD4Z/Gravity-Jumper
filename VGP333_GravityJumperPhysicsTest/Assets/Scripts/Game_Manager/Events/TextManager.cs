@@ -15,8 +15,12 @@ public class TextManager : MonoBehaviour
     public int endAtLine;
     public bool isActive;
 
+    private float timer = 0f;
+
     void Start()
     {
+        timer += Time.deltaTime;
+
         if (textFile != null)
         {
             textLines = (textFile.text.Split('\n'));
@@ -37,8 +41,8 @@ public class TextManager : MonoBehaviour
 
     void Update()
     {
-        theText.text = textLines[currentLine];
-        //here goes the code for trigger enter
+            theText.text = textLines[currentLine];
+       
         if(!isActive)
         {
             return;

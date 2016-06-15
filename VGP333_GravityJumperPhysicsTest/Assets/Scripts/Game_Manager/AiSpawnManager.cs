@@ -9,6 +9,7 @@ public class AiSpawnManager : MonoBehaviour
 
     public Transform[] spawnPoint;
 
+    public float EnemyLifetime;
 
     void Start()
     {
@@ -27,5 +28,6 @@ public class AiSpawnManager : MonoBehaviour
         int spawnPointIndex = Random.Range(0, spawnPoint.Length);
 
         Instantiate(enemy, spawnPoint[spawnPointIndex].position, spawnPoint[spawnPointIndex].rotation);
+        enemy.GetComponent<EnemyAi>().selfDestroyTimer = EnemyLifetime;
     }
 }

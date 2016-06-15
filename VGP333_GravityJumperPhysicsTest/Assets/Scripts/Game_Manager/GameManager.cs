@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿    using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject mPlayer;
 	public GameObject mGun;
+
     public CheckpointSystem mCheckPointSystem;
     public Death_Zone mDeathZone;
     public GameOver mGameOver;
@@ -28,5 +29,6 @@ public class GameManager : MonoBehaviour
 	public PickUps mPickUps;
     public TextManager mTextManager;
     public AiSpawnManager mAiSpawnManager;
-    public LevelManager mLevelManager; //Need to: Load new scene, set new checkpoint for player starting point, display "Level Number" on text on screen
+    public LevelManager mLevelManager;
+    public GunScript mGunScript;
 }
