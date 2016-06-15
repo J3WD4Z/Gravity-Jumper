@@ -15,6 +15,7 @@ public class GunScript : MonoBehaviour
     //private Vector3 playerpos;
     //private bool lrp;
     public int m_Ammo;
+
     public ParticleSystem m_GunSmoke;
     public ParticleSystem m_GunFire;
 
@@ -26,7 +27,10 @@ public class GunScript : MonoBehaviour
 		player = GameManager.Instance.mPlayer;
 		playertrans = player.GetComponent<Transform>();
 		playerbody = player.GetComponent<Rigidbody>();
+
+
         m_GunSmoke = m_GunSmoke.GetComponent<ParticleSystem>();
+
 	}
 
 	// Update is called once per frame

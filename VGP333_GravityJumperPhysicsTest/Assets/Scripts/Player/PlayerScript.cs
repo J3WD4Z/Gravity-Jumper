@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
 	private Transform cache_tf;
 	public float forspeed;
 	public float strafespeed;
+
 	public float jetupforce;
 	private Vector3 velocity;
 	private Vector3 prevVelocityY;
@@ -24,7 +25,8 @@ public class PlayerScript : MonoBehaviour
 	//private float weight;
 
     //Player Speeds
-    [SerializeField]
+
+    //[SerializeField]
     private Vector3 m_Velocity;
     [SerializeField]
     private Quaternion m_Rotation;
@@ -125,13 +127,19 @@ public class PlayerScript : MonoBehaviour
 			if (horizontal == 0)
 			{
 				temp = forspeed * vertical * cache_tf.forward;
-				cache_rb.velocity = resultant(temp, prevVelocityY);
-			}
+
+                cache_rb.velocity = resultant(temp, prevVelocityY);
+            }
+
+
 			else if (vertical == 0)
 			{
 				temp = strafespeed * horizontal * cache_tf.right;
 				cache_rb.velocity = resultant(temp, prevVelocityY);
-			}
+
+            }
+
+
 			else
 			{
 
@@ -139,7 +147,8 @@ public class PlayerScript : MonoBehaviour
 				strafe = cache_tf.right * strafespeed * horizontal;
 				temp = resultant(strafe, forw);
 				cache_rb.velocity = resultant(temp, prevVelocityY);
-			}
+
+            }
 
 		}
 		/*
@@ -220,43 +229,45 @@ public class PlayerScript : MonoBehaviour
         if(m_Jetpack == true)
         {
 
-			if (Input.GetKey(KeyCode.Space))
-			{
-				hasnotshot = false;
-				cache_rb.AddForce(new Vector3(0.0f, jetupforce, 0.0f));
-				m_Fuel = m_Fuel - 0.5f;
-			}
+            if (Input.GetKey(KeyCode.Space))
+            {
+                hasnotshot = false;
+                cache_rb.AddForce(new Vector3(0.0f, jetupforce, 0.0f));
+                m_Fuel = m_Fuel - 0.5f;
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                //cache_tf.Translate(Vector3.forward * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.forward * m_JetForce);
+                m_Fuel = m_Fuel - 0.5f;
+            }
 
-			if (Input.GetKey(KeyCode.W))
-			{
-				//cache_tf.Translate(Vector3.forward * Time.deltaTime);
-				cache_rb.AddForce(cache_tf.forward * m_JetForce);
-				m_Fuel = m_Fuel - 0.5f;
-			}
+            if (Input.GetKey(KeyCode.A))
+            {
+                //cache_tf.Translate(Vector3.left * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
+                m_Fuel = m_Fuel - 0.5f;
+            }
 
-			if (Input.GetKey(KeyCode.A))
-			{
-				//cache_tf.Translate(Vector3.left * Time.deltaTime);
-				cache_rb.AddForce(cache_tf.right * m_JetForce * -1);
-				m_Fuel = m_Fuel - 0.5f;
-			}
+            if (Input.GetKey(KeyCode.S))
+            {
+                //cache_tf.Translate(Vector3.back * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
+                m_Fuel = m_Fuel - 0.5f;
+            }
 
-			if (Input.GetKey(KeyCode.S))
-			{
-				//cache_tf.Translate(Vector3.back * Time.deltaTime);
-				cache_rb.AddForce(cache_tf.forward * m_JetForce * -1);
-				m_Fuel = m_Fuel - 0.5f;
-			}
+            if (Input.GetKey(KeyCode.D))
+            {
+                //cache_tf.Translate(Vector3.right * Time.deltaTime);
+                cache_rb.AddForce(cache_tf.right * m_JetForce);
+                m_Fuel = m_Fuel - 0.5f;
+            }
+            
+        }
 
-			if (Input.GetKey(KeyCode.D))
-			{
-				//cache_tf.Translate(Vector3.right * Time.deltaTime);
-				cache_rb.AddForce(cache_tf.right * m_JetForce);
-				m_Fuel = m_Fuel - 0.5f;
-			}
-		}
 
         #endregion
+
 
     }
 
