@@ -14,7 +14,7 @@ public class EnemyAi : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag( "Player" ).transform;
         nav = GetComponent<NavMeshAgent>();
-        Destroy(this, selfDestroyTimer);
+        Destroy(this.gameObject, selfDestroyTimer);
 //        selfDestroyTimer += Time.deltaTime;
     }
 	

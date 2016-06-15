@@ -28,6 +28,7 @@ GameObject:
   - 4: {fileID: 477324}
   - 114: {fileID: 11441336}
   - 54: {fileID: 5498188}
+  - 114: {fileID: 11404620}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Untagged
@@ -120,6 +121,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11404620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c969aab62e03c4fa1243413a85f25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11441336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a1b90b50c9dfb4bb9f7ef3a3f82784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Lifetime: 10
+  m_Lifetime: 3
   m_HazardUpForce: {x: 0, y: 0, z: 0}
   m_HazardSpawnForce: {x: 0, y: 0, z: 0}
   m_Rigidbody: {fileID: 0}

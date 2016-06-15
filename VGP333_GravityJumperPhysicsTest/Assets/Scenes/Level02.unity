@@ -164,6 +164,42 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22437120, guid: 1e9594f467931fd44b785e8d35bd7f9b, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -196.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 22437120, guid: 1e9594f467931fd44b785e8d35bd7f9b, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -369.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473218, guid: 1e9594f467931fd44b785e8d35bd7f9b, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473218, guid: 1e9594f467931fd44b785e8d35bd7f9b, type: 2}
+      propertyPath: m_Color.g
+      value: 0.54901963
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473218, guid: 1e9594f467931fd44b785e8d35bd7f9b, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473218, guid: 1e9594f467931fd44b785e8d35bd7f9b, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473218, guid: 1e9594f467931fd44b785e8d35bd7f9b, type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 22437120, guid: 1e9594f467931fd44b785e8d35bd7f9b, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 189
+      objectReference: {fileID: 0}
+    - target: {fileID: 22437120, guid: 1e9594f467931fd44b785e8d35bd7f9b, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 36.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e9594f467931fd44b785e8d35bd7f9b, type: 2}
   m_IsPrefabParent: 0
@@ -1048,15 +1084,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 671994315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c7023a7b9b34bd42a1011c4d5ba3de8, type: 3}
+  m_Script: {fileID: 11500000, guid: 91acf717f7790cc418e755ae78d7390d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  spawnTime: 3
-  spawnPoint:
-  - {fileID: 1715913862}
-  - {fileID: 733376953}
-  - {fileID: 727356973}
+  m_Hazard: {fileID: 181880, guid: 5f9e129c7d615454fa34d2386ed63ffd, type: 2}
+  m_SpawnTime: 1
+  m_SpawnRate: 4
+  m_RandomDir: 0
 --- !u!4 &671994317
 Transform:
   m_ObjectHideFlags: 0
@@ -3031,7 +3065,6 @@ GameObject:
   - 20: {fileID: 1554073931}
   - 92: {fileID: 1554073930}
   - 124: {fileID: 1554073929}
-  - 81: {fileID: 1554073928}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3039,13 +3072,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1554073928
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1554073927}
-  m_Enabled: 1
 --- !u!124 &1554073929
 Behaviour:
   m_ObjectHideFlags: 0
@@ -3784,11 +3810,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 129284, guid: 4b9567571628b1844803d90c9a0dcc9d, type: 2}
-  spawnTime: 3
+  spawnTime: 5
   spawnPoint:
   - {fileID: 1889135175}
   - {fileID: 785979104}
   - {fileID: 1237539819}
+  EnemyLifetime: 10
 --- !u!4 &1853972101
 Transform:
   m_ObjectHideFlags: 0
