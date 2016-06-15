@@ -5,8 +5,7 @@ public class GroundScript : MonoBehaviour
 {
 	public int shotsgiven;
 	public float fuelgiven;
-
-	private GameObject gun;
+    
 	private GameObject player;
 
 	//public float force;
@@ -17,8 +16,7 @@ public class GroundScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		player = GameManager.Instance.mPlayer;
-		gun = GameManager.Instance.mGun;
+		player = GameObject.FindGameObjectWithTag("Player");
 		//pull = false;
 	}
 	
@@ -27,7 +25,7 @@ public class GroundScript : MonoBehaviour
 	{
 		if(player.GetComponent<PlayerScript>().hasnotshot)
 		{
-			gun.GetComponent<GunScript>().m_Ammo = shotsgiven;
+			player.GetComponentInChildren<GunScript>().m_Ammo = shotsgiven;
 			player.GetComponent<PlayerScript>().m_Fuel = fuelgiven;
 		}
 
