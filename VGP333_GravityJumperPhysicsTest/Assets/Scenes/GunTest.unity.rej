@@ -1,0 +1,14 @@
+diff a/VGP333_GravityJumperPhysicsTest/Assets/Scenes/GunTest.unity b/VGP333_GravityJumperPhysicsTest/Assets/Scenes/GunTest.unity	(rejected hunks)
+@@ -85,12 +85,6 @@
+     cellSize: 0.16666667
+     manualCellSize: 0
+   m_NavMeshData: {fileID: 0}
+---- !u!114 &94710983 stripped
+-MonoBehaviour:
+-  m_PrefabParentObject: {fileID: 11469404, guid: fc62b889687343d4bbb38b65815e7807,
+-    type: 2}
+-  m_PrefabInternal: {fileID: 272328810}
+-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+ --- !u!1 &163217672
+ GameObject:
+   m_ObjectHideFlags: 0

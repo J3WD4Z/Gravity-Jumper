@@ -7,10 +7,18 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
+<<<<<<< HEAD
   - 4: {fileID: 440728}
   - 20: {fileID: 2012126}
   - 124: {fileID: 12483970}
   - 92: {fileID: 9289490}
+=======
+  - 4: {fileID: 496590}
+  - 33: {fileID: 3317912}
+  - 65: {fileID: 6572456}
+  - 23: {fileID: 2363586}
+  - 114: {fileID: 11443308}
+>>>>>>> origin/master
   m_Layer: 0
   m_Name: BackCam
   m_TagString: Untagged
@@ -18,6 +26,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!1 &162120
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,6 +66,9 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &165004
+=======
+--- !u!1 &117842
+>>>>>>> origin/master
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -127,6 +139,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &401432
 Transform:
   m_ObjectHideFlags: 1
@@ -144,6 +157,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &401538
+=======
+--- !u!4 &407320
+>>>>>>> origin/master
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -153,9 +169,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< HEAD
   - {fileID: 445386}
   - {fileID: 427936}
   m_Father: {fileID: 401432}
+=======
+  - {fileID: 496590}
+  m_Father: {fileID: 488002}
+>>>>>>> origin/master
   m_RootOrder: 0
 --- !u!4 &418222
 Transform:
@@ -285,25 +306,32 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+<<<<<<< HEAD
 --- !u!23 &2381124
+=======
+--- !u!23 &2363586
+>>>>>>> origin/master
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 163094}
+=======
+  m_GameObject: {fileID: 113668}
+>>>>>>> origin/master
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 812b14b156207c14c9609451642f667a, type: 2}
-  - {fileID: 2100000, guid: 4a95b9a6c22a25f46b9d41b494e04ac5, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_MinimumChartSize: 4
@@ -319,6 +347,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174386}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
 --- !u!33 &3346522
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -327,6 +356,9 @@ MeshFilter:
   m_GameObject: {fileID: 163094}
   m_Mesh: {fileID: 4300000, guid: fccd8e251d698f7449ed9aca4bacc50e, type: 3}
 --- !u!33 &3375518
+=======
+--- !u!33 &3356888
+>>>>>>> origin/master
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -418,11 +450,32 @@ MonoBehaviour:
   strafe: {x: 1.99, y: 1.18, z: 1.53}
   m_Fuel: 10000
   m_Jetpack: 0
+<<<<<<< HEAD
   m_JetForce: 2
   m_PositiveLimit: 15
   m_NegativeLimit: -15
   m_GravLimit: {x: 0, y: -10, z: 0}
 --- !u!114 &11425340
+=======
+  m_JetForce: 10
+  m_PositiveLimit: 100
+  m_NegativeLimit: 100
+  m_GravLimit: {x: 0, y: 0, z: 0}
+--- !u!114 &11443308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4612434fa7b54409d310fb6373cdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 500
+  m_Ammo: 5
+--- !u!114 &11456466
+>>>>>>> origin/master
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -441,6 +494,7 @@ MonoBehaviour:
   smooth: 0
   smoothTime: 5
   lockCursor: 1
+<<<<<<< HEAD
 --- !u!114 &11467956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -456,6 +510,9 @@ MonoBehaviour:
   m_Ammo: 1000
   m_GunSmoke: {fileID: 19850070}
 --- !u!124 &12481968
+=======
+--- !u!124 &12409148
+>>>>>>> origin/master
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
