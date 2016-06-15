@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 
 	void Start ()
 	{
-//		timerText = GetComponent<Text>();
+
 	}
 
 	void Update ()

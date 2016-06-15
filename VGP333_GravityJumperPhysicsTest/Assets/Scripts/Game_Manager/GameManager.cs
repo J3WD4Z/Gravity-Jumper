@@ -27,5 +27,6 @@ public class GameManager : MonoBehaviour
 	public LifePlus mLifePlus;
 	public PickUps mPickUps;
     public TextManager mTextManager;
-	public FuelManager mFuelManager;
+    public AiSpawnManager mAiSpawnManager;
+    public LevelManager mLevelManager; //Need to: Load new scene, set new checkpoint for player starting point, display "Level Number" on text on screen
 }
