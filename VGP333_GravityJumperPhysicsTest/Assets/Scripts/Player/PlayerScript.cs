@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
 	private Transform cache_tf;
 	public float forspeed;
 	public float strafespeed;
+	public float jumpforce;
 	private Vector3 velocity;
 	private Vector3 prevVelocityY;
 	private MyMouseLook m_MouseLook;
@@ -67,7 +68,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             hasnotshot = false;
-            cache_rb.AddForce(new Vector3(0.0f, 1000.0f, 0.0f));
+            cache_rb.AddForce(new Vector3(0.0f, jumpforce, 0.0f));
         }
         RotateView();
 
