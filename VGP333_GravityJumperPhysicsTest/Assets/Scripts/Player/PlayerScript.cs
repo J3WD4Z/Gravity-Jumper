@@ -13,22 +13,34 @@ public class PlayerScript : MonoBehaviour
 	public float forspeed;
 	public float strafespeed;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	public float jetupforce;
 	private Vector3 velocity;
 >>>>>>> origin/master
+=======
+	public float jetupforce;
+	private Vector3 velocity;
+>>>>>>> 7b4255a1102f56834cb27ab8f961b3ecd04ffa8c
 	private Vector3 prevVelocityY;
 	private MyMouseLook m_MouseLook;
 	private Quaternion rot;
 	public bool hasnotshot;
     private Vector3 m_PlayerBottom;
     public RaycastHit hit;
+<<<<<<< HEAD
     public float jetupforce;
+=======
+>>>>>>> 7b4255a1102f56834cb27ab8f961b3ecd04ffa8c
 	//public float mass;
 	//private float weight;
 
     //Player Speeds
+<<<<<<< HEAD
     //[SerializeField]
+=======
+    [SerializeField]
+>>>>>>> 7b4255a1102f56834cb27ab8f961b3ecd04ffa8c
     private Vector3 m_Velocity;
     [SerializeField]
     private Quaternion m_Rotation;
@@ -129,13 +141,22 @@ public class PlayerScript : MonoBehaviour
 			if (horizontal == 0)
 			{
 				temp = forspeed * vertical * cache_tf.forward;
+<<<<<<< HEAD
                 cache_rb.velocity = resultant(temp, prevVelocityY);
             }
+=======
+				cache_rb.velocity = resultant(temp, prevVelocityY);
+			}
+>>>>>>> 7b4255a1102f56834cb27ab8f961b3ecd04ffa8c
 			else if (vertical == 0)
 			{
 				temp = strafespeed * horizontal * cache_tf.right;
 				cache_rb.velocity = resultant(temp, prevVelocityY);
+<<<<<<< HEAD
             }
+=======
+			}
+>>>>>>> 7b4255a1102f56834cb27ab8f961b3ecd04ffa8c
 			else
 			{
 
@@ -143,7 +164,11 @@ public class PlayerScript : MonoBehaviour
 				strafe = cache_tf.right * strafespeed * horizontal;
 				temp = resultant(strafe, forw);
 				cache_rb.velocity = resultant(temp, prevVelocityY);
+<<<<<<< HEAD
             }
+=======
+			}
+>>>>>>> 7b4255a1102f56834cb27ab8f961b3ecd04ffa8c
 
 		}
 		/*
@@ -172,7 +197,11 @@ public class PlayerScript : MonoBehaviour
 		}
 		*/
 		#endregion
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 7b4255a1102f56834cb27ab8f961b3ecd04ffa8c
 		#region Velocity Damping
 
 		if (m_Velocity.y < m_GravLimit.y)//v: Limit the Downward Velocity that Gravity can impose. Make things easier for the player.
@@ -201,7 +230,11 @@ public class PlayerScript : MonoBehaviour
         }
 
         #endregion
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 7b4255a1102f56834cb27ab8f961b3ecd04ffa8c
         #region Jetpack Code
 
         if (m_Fuel <= 0.0f)
@@ -223,6 +256,7 @@ public class PlayerScript : MonoBehaviour
 
         if(m_Jetpack == true)
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             if (Input.GetKey(KeyCode.Space))
             {
@@ -260,6 +294,8 @@ public class PlayerScript : MonoBehaviour
             
         }
 =======
+=======
+>>>>>>> 7b4255a1102f56834cb27ab8f961b3ecd04ffa8c
 
 			if (Input.GetKey(KeyCode.Space))
 			{
@@ -296,10 +332,16 @@ public class PlayerScript : MonoBehaviour
 				m_Fuel = m_Fuel - 0.5f;
 			}
 		}
+<<<<<<< HEAD
 >>>>>>> origin/master
 
         #endregion
     
+=======
+
+        #endregion
+
+>>>>>>> 7b4255a1102f56834cb27ab8f961b3ecd04ffa8c
     }
 
     void FixedUpdate()
