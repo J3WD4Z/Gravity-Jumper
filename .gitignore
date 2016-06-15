@@ -24,7 +24,6 @@ ExportedObj/
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
-*.meta
 *.info
 VGP333_GravityJumperPhysicsTest/Temp/UnityLockfile
 *.info
