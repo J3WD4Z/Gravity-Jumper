@@ -99,6 +99,8 @@ public class LevelManager : MonoBehaviour
                 //GameObject.DestroyImmediate(GameManager.Instance.mPlatforms);
             }
             SceneManager.LoadScene("GameOver");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             //Application.LoadLevel("VictoryScene");
         }
     }
