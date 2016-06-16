@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject mPlayer;
 	public GameObject mGun;
-
+    public GameObject mDeathZoneObj; //Added because Death Zone does not delete on level load
     public CheckpointSystem mCheckPointSystem;
     public Death_Zone mDeathZone;
     public GameOver mGameOver;
@@ -31,4 +31,7 @@ public class GameManager : MonoBehaviour
     public AiSpawnManager mAiSpawnManager;
     public LevelManager mLevelManager;
     public GunScript mGunScript;
+    public GameObject mRingWall;
+    public GameObject mPlatforms;
+    public GameObject mEnemyLayout;
 }

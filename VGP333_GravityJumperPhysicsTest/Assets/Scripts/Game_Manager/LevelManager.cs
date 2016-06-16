@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     {
         DontDestroyOnLoad(GameManager.Instance.mPlayer);
         DontDestroyOnLoad(GameManager.Instance.mCheckPointSystem);
-        DontDestroyOnLoad(GameManager.Instance.mDeathZone);
+        DontDestroyOnLoad(GameManager.Instance.mDeathZoneObj);
         DontDestroyOnLoad(GameManager.Instance.mHealthManager);
         DontDestroyOnLoad(GameManager.Instance.mTimer);
         DontDestroyOnLoad(GameManager.Instance.mLifePlus);

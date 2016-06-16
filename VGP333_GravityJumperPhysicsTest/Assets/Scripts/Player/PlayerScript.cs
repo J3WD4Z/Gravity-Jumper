@@ -99,7 +99,9 @@ public class PlayerScript : MonoBehaviour
 			b_Camera.enabled = false;
 			m_Camera.enabled = true;
 		}
-		#region Ground Movement
+        #region Ground Movement
+        m_Footsteps.Stop();
+
 		if (hasnotshot == true)
 		{
 			float horizontal = Input.GetAxis("Horizontal");
@@ -127,7 +129,7 @@ public class PlayerScript : MonoBehaviour
 
 			if (horizontal == 0)
 			{
-                //m_Footsteps.Play();
+                m_Footsteps.Play();
                 temp = forspeed * vertical * cache_tf.forward;
 
                 cache_rb.velocity = resultant(temp, prevVelocityY);
@@ -136,7 +138,7 @@ public class PlayerScript : MonoBehaviour
 
 			else if (vertical == 0)
 			{
-                //m_Footsteps.Play();
+                m_Footsteps.Play();
                 temp = strafespeed * horizontal * cache_tf.right;
 				cache_rb.velocity = resultant(temp, prevVelocityY);
 

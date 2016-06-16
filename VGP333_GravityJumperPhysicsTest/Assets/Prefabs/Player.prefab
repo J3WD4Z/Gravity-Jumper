@@ -825,6 +825,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793bfaee1755f8a40a34814cf066b7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mRingWall: {fileID: 0}
+  mPlatforms: {fileID: 0}
+  mEnemyLayout: {fileID: 0}
 --- !u!114 &11416206
 MonoBehaviour:
   m_ObjectHideFlags: 1

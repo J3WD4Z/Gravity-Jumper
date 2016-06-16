@@ -303,6 +303,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27511fd0785fcab40a5d7c102f5442da, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &102726772 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 182868, guid: a6a76d350d7e04d4488a8b3d680fd13e, type: 2}
+  m_PrefabInternal: {fileID: 1010036094}
 --- !u!1001 &107791831
 Prefab:
   m_ObjectHideFlags: 0
@@ -3051,6 +3055,18 @@ Prefab:
       propertyPath: mDeathZone
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11496240, guid: 09dab8fa2fd41574198bc120ea597c1a, type: 2}
+      propertyPath: mDeathZoneObj
+      value: 
+      objectReference: {fileID: 102726772}
+    - target: {fileID: 11496240, guid: 09dab8fa2fd41574198bc120ea597c1a, type: 2}
+      propertyPath: mPlatforms
+      value: 
+      objectReference: {fileID: 1059739202}
+    - target: {fileID: 11496240, guid: 09dab8fa2fd41574198bc120ea597c1a, type: 2}
+      propertyPath: mRingWall
+      value: 
+      objectReference: {fileID: 1827736764}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09dab8fa2fd41574198bc120ea597c1a, type: 2}
   m_IsPrefabParent: 0

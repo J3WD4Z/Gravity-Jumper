@@ -10,7 +10,6 @@ public class GunScript : MonoBehaviour
 	//private float timer;
 	//public bool test
 	private GameObject player;
-	private Transform playertrans;
 	private Rigidbody playerbody;
 	private Vector3 move;
     //private Vector3 playerpos;
@@ -28,7 +27,6 @@ public class GunScript : MonoBehaviour
 		//lrp = false;
 		//timer = 0;
 		player = GameManager.Instance.mPlayer;
-		playertrans = player.GetComponent<Transform>();
 		playerbody = player.GetComponent<Rigidbody>();
         m_GunSound = this.GetComponent<AudioSource>();
 

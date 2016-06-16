@@ -13,13 +13,10 @@ public class HazardAttributes : MonoBehaviour {
 
     [SerializeField]
     private Rigidbody m_Rigidbody;
-    [SerializeField]
-    private Transform m_Transform;
 
 	// Use this for initialization
 	void Start () {
         m_Rigidbody = GetComponent<Rigidbody>();
-        m_Transform = GetComponent<Transform>();
         m_HazardSpawnForce = new Vector3(Random.Range(-500.0f, 500.0f), Random.Range(-500.0f, 500.0f), Random.Range(-500.0f, 500.0f));
         m_Rigidbody.AddForce(m_HazardSpawnForce);
 	}
