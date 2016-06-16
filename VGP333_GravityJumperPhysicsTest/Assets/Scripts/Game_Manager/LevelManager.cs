@@ -2,47 +2,107 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 public class LevelManager : MonoBehaviour
 {
-    public int Level = 1;
+    public int Level;
     public GameObject Warp; 
     public Text levelText;
 
 	void Start ()
     {
-        DontDestroyOnLoad(GameManager.Instance.mPlayer);
-        DontDestroyOnLoad(GameManager.Instance.mCheckPointSystem);
-        DontDestroyOnLoad(GameManager.Instance.mDeathZoneObj);
-        DontDestroyOnLoad(GameManager.Instance.mHealthManager);
-        DontDestroyOnLoad(GameManager.Instance.mTimer);
-        DontDestroyOnLoad(GameManager.Instance.mLifePlus);
-        DontDestroyOnLoad(GameManager.Instance.mPickUps);
-        DontDestroyOnLoad(GameManager.Instance.mTextManager);
-        DontDestroyOnLoad(GameManager.Instance.mAiSpawnManager);
-        DontDestroyOnLoad(GameManager.Instance.mLevelManager);
-        DontDestroyOnLoad(GameManager.Instance.mGameOver);
+        //DontDestroyOnLoad(GameManager.Instance.mPlayer);
+        //DontDestroyOnLoad(GameManager.Instance.mCheckPointSystem);
+        //DontDestroyOnLoad(GameManager.Instance.mDeathZoneObj);
+        //DontDestroyOnLoad(GameManager.Instance.mHealthManager);
+        //DontDestroyOnLoad(GameManager.Instance.mTimer);
+        //DontDestroyOnLoad(GameManager.Instance.mLifePlus);
+        //DontDestroyOnLoad(GameManager.Instance.mPickUps);
+        //DontDestroyOnLoad(GameManager.Instance.mTextManager);
+        //DontDestroyOnLoad(GameManager.Instance.mAiSpawnManager);
+        //DontDestroyOnLoad(GameManager.Instance.mLevelManager);
+        //DontDestroyOnLoad(GameManager.Instance.mGameOver);
         
 }
 	
 	void Update ()
     {
-	
-	}
+	    if(EditorApplication.currentScene == "Level01")
+        {
+            Level = 1;
+        }
+
+        if (EditorApplication.currentScene == "Level02")
+        {
+            Level = 2;
+        }
+
+        if (EditorApplication.currentScene == "VictoryScene")
+        {
+            //GameObject.DestroyImmediate(GameManager.Instance.mPlayer);
+            //GameObject.DestroyImmediate(GameManager.Instance.mCheckPointSystem);
+            //GameObject.DestroyImmediate(GameManager.Instance.mDeathZoneObj);
+            //GameObject.DestroyImmediate(GameManager.Instance.mHealthManager);
+            //GameObject.DestroyImmediate(GameManager.Instance.mTimer);
+            //GameObject.DestroyImmediate(GameManager.Instance.mLifePlus);
+            //GameObject.DestroyImmediate(GameManager.Instance.mPickUps);
+            //GameObject.DestroyImmediate(GameManager.Instance.mTextManager);
+            //GameObject.DestroyImmediate(GameManager.Instance.mAiSpawnManager);
+            //GameObject.DestroyImmediate(GameManager.Instance.mLevelManager);
+            //GameObject.DestroyImmediate(GameManager.Instance.mGameOver);
+            //GameObject.DestroyImmediate(GameManager.Instance.mEnemyLayout);
+            //GameObject.DestroyImmediate(GameManager.Instance.mRingWall);
+            //GameObject.DestroyImmediate(GameManager.Instance.mPlatforms);
+        }
+    }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && Level == 1)
         {
+            //GameObject.DestroyImmediate(GameManager.Instance.mPlayer);
+            //GameObject.DestroyImmediate(GameManager.Instance.mCheckPointSystem);
+            //GameObject.DestroyImmediate(GameManager.Instance.mDeathZoneObj);
+            //GameObject.DestroyImmediate(GameManager.Instance.mHealthManager);
+            //GameObject.DestroyImmediate(GameManager.Instance.mTimer);
+            //GameObject.DestroyImmediate(GameManager.Instance.mLifePlus);
+            //GameObject.DestroyImmediate(GameManager.Instance.mPickUps);
+            //GameObject.DestroyImmediate(GameManager.Instance.mTextManager);
+            //GameObject.DestroyImmediate(GameManager.Instance.mAiSpawnManager);
+            //GameObject.DestroyImmediate(GameManager.Instance.mLevelManager);
+            //GameObject.DestroyImmediate(GameManager.Instance.mGameOver);
+            //GameObject.DestroyImmediate(GameManager.Instance.mEnemyLayout);
+            //GameObject.DestroyImmediate(GameManager.Instance.mRingWall);
+            //GameObject.DestroyImmediate(GameManager.Instance.mPlatforms);
+            
             SceneManager.LoadScene( "Level02" );
         }
         else if(other.CompareTag("Player") && Level == 2)
         {
+            if (EditorApplication.currentScene == "VictoryScene")
+            {
+                //GameObject.DestroyImmediate(GameManager.Instance.mPlayer);
+                //GameObject.DestroyImmediate(GameManager.Instance.mCheckPointSystem);
+                //GameObject.DestroyImmediate(GameManager.Instance.mDeathZoneObj);
+                //GameObject.DestroyImmediate(GameManager.Instance.mHealthManager);
+                //GameObject.DestroyImmediate(GameManager.Instance.mTimer);
+                //GameObject.DestroyImmediate(GameManager.Instance.mLifePlus);
+                //GameObject.DestroyImmediate(GameManager.Instance.mPickUps);
+                //GameObject.DestroyImmediate(GameManager.Instance.mTextManager);
+                //GameObject.DestroyImmediate(GameManager.Instance.mAiSpawnManager);
+                //GameObject.DestroyImmediate(GameManager.Instance.mLevelManager);
+                //GameObject.DestroyImmediate(GameManager.Instance.mGameOver);
+                //GameObject.DestroyImmediate(GameManager.Instance.mEnemyLayout);
+                //GameObject.DestroyImmediate(GameManager.Instance.mRingWall);
+                //GameObject.DestroyImmediate(GameManager.Instance.mPlatforms);
+            }
             SceneManager.LoadScene("VictoryScene");
         }
     }
 
-    public void OnLevelWasLoaded()
-    {
-        Level++;
-    }
+    //Since we set int Level in the inspector, this function is redundant and in fact causes bugs.
+    //public void OnLevelWasLoaded()
+    //{
+    //    Level++;
+    //}
 }
