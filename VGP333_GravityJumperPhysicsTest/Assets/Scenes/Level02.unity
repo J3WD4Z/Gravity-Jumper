@@ -960,6 +960,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27511fd0785fcab40a5d7c102f5442da, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &598743068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 598743069}
+  - 114: {fileID: 598743070}
+  m_Layer: 0
+  m_Name: GameFinish
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &598743069
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 598743068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -122.61, y: 272.59, z: 205.15}
+  m_LocalScale: {x: 19.810638, y: 2.5768075, z: 23.152637}
+  m_Children: []
+  m_Father: {fileID: 808944252}
+  m_RootOrder: 3
+--- !u!114 &598743070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 598743068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7481bb1c07728c541a0198760e6778dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 2
+  Warp: {fileID: 0}
+  levelText: {fileID: 0}
 --- !u!1001 &602256542
 Prefab:
   m_ObjectHideFlags: 0
@@ -1281,6 +1323,7 @@ Transform:
   - {fileID: 972652845}
   - {fileID: 1507571134}
   - {fileID: 2007919092}
+  - {fileID: 598743069}
   m_Father: {fileID: 0}
   m_RootOrder: 9
 --- !u!4 &821300516 stripped

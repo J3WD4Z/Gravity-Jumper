@@ -25,8 +25,7 @@ public class GroundScript : MonoBehaviour
 	{
 		if(player.GetComponent<PlayerScript>().hasnotshot)
 		{
-			player.GetComponentInChildren<GunScript>().m_Ammo = shotsgiven;
-			player.GetComponent<PlayerScript>().m_Fuel = fuelgiven;
+			
 		}
 
 		/*
@@ -49,11 +48,13 @@ public class GroundScript : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		//if(other.GetComponent<PlayerScript>() != null)
-		//{
-		//	pull = true;
-		//}
-	}
+        player.GetComponentInChildren<GunScript>().m_Ammo += shotsgiven;
+        player.GetComponent<PlayerScript>().m_Fuel += fuelgiven;
+        //if(other.GetComponent<PlayerScript>() != null)
+        //{
+        //	pull = true;
+        //}
+    }
 
 	Vector3 findvec(Vector3 a,Vector3 b)
 	{
