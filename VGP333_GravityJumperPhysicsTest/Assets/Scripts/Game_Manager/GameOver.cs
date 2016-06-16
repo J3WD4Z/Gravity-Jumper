@@ -37,6 +37,6 @@ public class GameOver : MonoBehaviour
         GameObject.DestroyImmediate(GameManager.Instance.mEnemyLayout);
         GameObject.DestroyImmediate(GameManager.Instance.mRingWall);
         GameObject.DestroyImmediate(GameManager.Instance.mPlatforms);
-        SceneManager.LoadScene("StatingMenu");
+        SceneManager.LoadScene("GameOverScene");
     }
 }
