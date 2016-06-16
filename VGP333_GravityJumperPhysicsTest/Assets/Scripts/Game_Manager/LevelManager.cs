@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using UnityEditor;
+
 public class LevelManager : MonoBehaviour
 {
     public int Level;
@@ -27,35 +27,18 @@ public class LevelManager : MonoBehaviour
 	
 	void Update ()
     {
-	    if(EditorApplication.currentScene == "Level01")
+	    if(SceneManager.GetActiveScene().name == "Level01")
         {
             Level = 1;
             SceneManager.UnloadScene("StatMenu");
         }
 
-        if (EditorApplication.currentScene == "Level02")
+        if (SceneManager.GetActiveScene().name == "Level02")
         {
             Level = 2;
             SceneManager.UnloadScene("Level01");
         }
-
-        if (EditorApplication.currentScene == "VictoryScene")
-        {
-            //GameObject.DestroyImmediate(GameManager.Instance.mPlayer);
-            //GameObject.DestroyImmediate(GameManager.Instance.mCheckPointSystem);
-            //GameObject.DestroyImmediate(GameManager.Instance.mDeathZoneObj);
-            //GameObject.DestroyImmediate(GameManager.Instance.mHealthManager);
-            //GameObject.DestroyImmediate(GameManager.Instance.mTimer);
-            //GameObject.DestroyImmediate(GameManager.Instance.mLifePlus);
-            //GameObject.DestroyImmediate(GameManager.Instance.mPickUps);
-            //GameObject.DestroyImmediate(GameManager.Instance.mTextManager);
-            //GameObject.DestroyImmediate(GameManager.Instance.mAiSpawnManager);
-            //GameObject.DestroyImmediate(GameManager.Instance.mLevelManager);
-            //GameObject.DestroyImmediate(GameManager.Instance.mGameOver);
-            //GameObject.DestroyImmediate(GameManager.Instance.mEnemyLayout);
-            //GameObject.DestroyImmediate(GameManager.Instance.mRingWall);
-            //GameObject.DestroyImmediate(GameManager.Instance.mPlatforms);
-        }
+        
     }
 
     public void OnTriggerEnter(Collider other)
@@ -81,23 +64,7 @@ public class LevelManager : MonoBehaviour
         }
         else if(other.CompareTag("Player") && Level == 2)
         {
-            if (EditorApplication.currentScene == "VictoryScene")
-            {
-                //GameObject.DestroyImmediate(GameManager.Instance.mPlayer);
-                //GameObject.DestroyImmediate(GameManager.Instance.mCheckPointSystem);
-                //GameObject.DestroyImmediate(GameManager.Instance.mDeathZoneObj);
-                //GameObject.DestroyImmediate(GameManager.Instance.mHealthManager);
-                //GameObject.DestroyImmediate(GameManager.Instance.mTimer);
-                //GameObject.DestroyImmediate(GameManager.Instance.mLifePlus);
-                //GameObject.DestroyImmediate(GameManager.Instance.mPickUps);
-                //GameObject.DestroyImmediate(GameManager.Instance.mTextManager);
-                //GameObject.DestroyImmediate(GameManager.Instance.mAiSpawnManager);
-                //GameObject.DestroyImmediate(GameManager.Instance.mLevelManager);
-                //GameObject.DestroyImmediate(GameManager.Instance.mGameOver);
-                //GameObject.DestroyImmediate(GameManager.Instance.mEnemyLayout);
-                //GameObject.DestroyImmediate(GameManager.Instance.mRingWall);
-                //GameObject.DestroyImmediate(GameManager.Instance.mPlatforms);
-            }
+            
             SceneManager.LoadScene("VictoryScene");
             //Application.LoadLevel("VictoryScene");
         }
