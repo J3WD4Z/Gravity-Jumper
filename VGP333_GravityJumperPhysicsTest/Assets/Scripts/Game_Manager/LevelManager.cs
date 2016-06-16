@@ -30,11 +30,13 @@ public class LevelManager : MonoBehaviour
 	    if(EditorApplication.currentScene == "Level01")
         {
             Level = 1;
+            SceneManager.UnloadScene("StatMenu");
         }
 
         if (EditorApplication.currentScene == "Level02")
         {
             Level = 2;
+            SceneManager.UnloadScene("Level01");
         }
 
         if (EditorApplication.currentScene == "VictoryScene")
@@ -96,7 +98,8 @@ public class LevelManager : MonoBehaviour
                 //GameObject.DestroyImmediate(GameManager.Instance.mRingWall);
                 //GameObject.DestroyImmediate(GameManager.Instance.mPlatforms);
             }
-            SceneManager.LoadScene("VictoryScene");
+            SceneManager.LoadScene("GameOver");
+            //Application.LoadLevel("VictoryScene");
         }
     }
 
